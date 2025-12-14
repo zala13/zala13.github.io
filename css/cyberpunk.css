@@ -10833,11 +10833,13 @@ article.article .content h5 {
 }
 article.article .content pre {
   font-size: 0.85em;
+  font-family: 'Roboto Mono', monospace, 'Microsoft YaHei';
 }
 article.article .content code {
   padding: 0;
   background: transparent;
   overflow-wrap: break-word;
+  font-family: 'Roboto Mono', monospace, 'Microsoft YaHei';
 }
 article.article .content blockquote.pullquote {
   float: right;
