@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>LeetCode 链表交换节点问题（24、25题） - Hexo</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Hexo"><meta name="msapplication-TileImage" content="/img/glass3.jpeg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="LeetCode 链表交换节点问题本文将详细讲解 LeetCode 中两道经典的链表节点交换问题：  第 24 题：两两交换链表中的节点 第 25 题：K 个一组翻转链表  这两道题都属于链表操作的经典题目，考察了对链表指针操作的掌握程度，以及递归或迭代思想的应用。 24. 两两交换链表中的节点题目描述给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。 你不能只是单纯的改变节点内部的值，而"><meta property="og:type" content="blog"><meta property="og:title" content="LeetCode 链表交换节点问题（24、25题）"><meta property="og:url" content="http://example.com/2025/12/13/leetcode/%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E9%97%AE%E9%A2%98/%E4%BA%A4%E6%8D%A2%E8%8A%82%E7%82%B9-24%E3%80%8125/"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="LeetCode 链表交换节点问题本文将详细讲解 LeetCode 中两道经典的链表节点交换问题：  第 24 题：两两交换链表中的节点 第 25 题：K 个一组翻转链表  这两道题都属于链表操作的经典题目，考察了对链表指针操作的掌握程度，以及递归或迭代思想的应用。 24. 两两交换链表中的节点题目描述给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。 你不能只是单纯的改变节点内部的值，而"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:published_time" content="2025-12-13T02:00:00.000Z"><meta property="article:modified_time" content="2025-12-17T14:17:53.700Z"><meta property="article:author" content="John Doe"><meta property="article:tag" content="LeetCode"><meta property="article:tag" content="算法"><meta property="article:tag" content="链表"><meta property="article:tag" content="双指针"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/12/13/leetcode/%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E9%97%AE%E9%A2%98/%E4%BA%A4%E6%8D%A2%E8%8A%82%E7%82%B9-24%E3%80%8125/"},"headline":"LeetCode 链表交换节点问题（24、25题）","image":["http://example.com/img/og_image.png"],"datePublished":"2025-12-13T02:00:00.000Z","dateModified":"2025-12-17T14:17:53.700Z","author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"Hexo","logo":{"@type":"ImageObject","url":"http://example.com/img/zala13.svg"}},"description":"LeetCode 链表交换节点问题本文将详细讲解 LeetCode 中两道经典的链表节点交换问题：  第 24 题：两两交换链表中的节点 第 25 题：K 个一组翻转链表  这两道题都属于链表操作的经典题目，考察了对链表指针操作的掌握程度，以及递归或迭代思想的应用。 24. 两两交换链表中的节点题目描述给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。 你不能只是单纯的改变节点内部的值，而"}</script><link rel="canonical" href="http://example.com/2025/12/13/leetcode/%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E9%97%AE%E9%A2%98/%E4%BA%A4%E6%8D%A2%E8%8A%82%E7%82%B9-24%E3%80%8125/"><link rel="icon" href="/img/glass3.jpeg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/zala13.svg" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-13T02:00:00.000Z" title="2025/12/13 10:00:00">2025-12-13</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-17T14:17:53.700Z" title="2025/12/17 22:17:53">2025-12-17</time></span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span> / </span><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/LeetCode/">LeetCode</a></span><span class="level-item">12 minutes read (About 1836 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">LeetCode 链表交换节点问题（24、25题）</h1><div class="content"><h1 id="LeetCode-链表交换节点问题"><a href="#LeetCode-链表交换节点问题" class="headerlink" title="LeetCode 链表交换节点问题"></a>LeetCode 链表交换节点问题</h1><p>本文将详细讲解 LeetCode 中两道经典的链表节点交换问题：</p>
+<ul>
+<li>第 24 题：两两交换链表中的节点</li>
+<li>第 25 题：K 个一组翻转链表</li>
+</ul>
+<p>这两道题都属于链表操作的经典题目，考察了对链表指针操作的掌握程度，以及递归或迭代思想的应用。</p>
+<h2 id="24-两两交换链表中的节点"><a href="#24-两两交换链表中的节点" class="headerlink" title="24. 两两交换链表中的节点"></a>24. 两两交换链表中的节点</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。</p>
+<p>你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2,3,4]</span><br><span class="line">输出：[2,1,4,3]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li>链表中节点的数目在范围 <code>[0, 100]</code> 内</li>
+<li><code>0 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>这道题的最优解法是使用 <strong>迭代</strong> 方法，通过维护几个关键指针来实现两两节点的交换。</p>
+<p><strong>核心思路：</strong></p>
+<ol>
+<li>使用一个虚拟头节点（dummy node）简化边界情况处理</li>
+<li>维护一个当前指针 <code>curr</code>，用于遍历链表</li>
+<li>每次交换 <code>curr</code> 后面的两个节点</li>
+<li>更新指针位置，继续下一轮交换</li>
+</ol>
+<p><strong>算法步骤：</strong></p>
+<ol>
+<li>创建虚拟头节点 <code>dummy</code>，使其指向原链表头</li>
+<li>初始化当前指针 <code>curr</code> 指向 <code>dummy</code></li>
+<li>当 <code>curr</code> 后面有至少两个节点时：<ul>
+<li>保存要交换的两个节点 <code>node1</code> 和 <code>node2</code></li>
+<li>执行交换操作：<code>node1.next = node2.next</code>，<code>node2.next = node1</code></li>
+<li>更新 <code>curr.next</code> 指向交换后的新头节点 <code>node2</code></li>
+<li>将 <code>curr</code> 移动到 <code>node1</code>，准备下一轮交换</li>
+</ul>
+</li>
+<li>返回虚拟头节点的下一个节点</li>
+</ol>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">swapPairs</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">dummy</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(-<span class="number">1</span>);</span><br><span class="line">        dummy.next = head;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">curr</span> <span class="operator">=</span> dummy;</span><br><span class="line">        <span class="keyword">while</span> (curr != <span class="literal">null</span> &amp;&amp; curr.next != <span class="literal">null</span> &amp;&amp; curr.next.next != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">node1</span> <span class="operator">=</span> curr.next, node2 = curr.next.next;</span><br><span class="line">            node1.next = node2.next;</span><br><span class="line">            node2.next = node1;</span><br><span class="line">            curr.next = node2;</span><br><span class="line">            curr = node1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码讲解"><a href="#代码讲解" class="headerlink" title="代码讲解"></a>代码讲解</h3><ol>
+<li><strong>边界处理</strong>：如果链表为空，直接返回 <code>null</code></li>
+<li><strong>创建虚拟头节点</strong>：<code>dummy</code> 节点的 <code>next</code> 指向原链表头，用于简化边界情况</li>
+<li><strong>初始化当前指针</strong>：<code>curr</code> 指向 <code>dummy</code>，作为当前交换位置的前一个节点</li>
+<li><strong>循环条件</strong>：当 <code>curr</code> 后面有至少两个节点时，继续交换</li>
+<li><strong>保存节点</strong>：<code>node1</code> 是当前要交换的第一个节点，<code>node2</code> 是第二个节点</li>
+<li><strong>交换操作</strong>：<ul>
+<li><code>node1.next = node2.next</code>：将 <code>node1</code> 指向 <code>node2</code> 原来的下一个节点</li>
+<li><code>node2.next = node1</code>：将 <code>node2</code> 指向 <code>node1</code>，完成两个节点的交换</li>
+</ul>
+</li>
+<li><strong>更新指针</strong>：<ul>
+<li><code>curr.next = node2</code>：将当前指针的下一个节点指向交换后的新头节点 <code>node2</code></li>
+<li><code>curr = node1</code>：将当前指针移动到 <code>node1</code>，准备下一轮交换</li>
+</ul>
+</li>
+<li><strong>返回结果</strong>：返回虚拟头节点的下一个节点，即交换后的链表头</li>
+</ol>
+<h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><ul>
+<li><strong>时间复杂度</strong>：O(n)，其中 n 是链表的长度。需要遍历链表一次</li>
+<li><strong>空间复杂度</strong>：O(1)，只使用了常数级别的额外空间</li>
+</ul>
+<h2 id="25-K-个一组翻转链表"><a href="#25-K-个一组翻转链表" class="headerlink" title="25. K 个一组翻转链表"></a>25. K 个一组翻转链表</h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>给你链表的头节点 <code>head</code>，每 <code>k</code> 个节点一组进行翻转，请你返回修改后的链表。</p>
+<p><code>k</code> 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 <code>k</code> 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
+<p>你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2,3,4,5], k = 2</span><br><span class="line">输出：[2,1,4,3,5]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li>链表中的节点数目在范围 <code>[0, 5000]</code> 内</li>
+<li><code>0 &lt;= Node.val &lt;= 1000</code></li>
+<li><code>1 &lt;= k &lt;= 5000</code></li>
+</ul>
+<h3 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h3><p>这道题是第 24 题的升级版，需要以 <code>k</code> 个节点为一组进行翻转。同样可以使用 <strong>迭代</strong> 方法来解决。</p>
+<p><strong>核心思路：</strong></p>
+<ol>
+<li>使用虚拟头节点简化边界情况</li>
+<li>维护三个指针：<code>prev</code>（当前组的前一个节点）、<code>curr</code>（当前节点）、<code>succ</code>（当前组的后一个节点）</li>
+<li>先检查剩余节点是否足够 <code>k</code> 个</li>
+<li>如果足够，对当前组的 <code>k</code> 个节点进行翻转</li>
+<li>更新指针位置，继续下一组翻转</li>
+</ol>
+<p><strong>算法步骤：</strong></p>
+<ol>
+<li>创建虚拟头节点 <code>dummy</code>，使其指向原链表头</li>
+<li>初始化 <code>prev</code> 指向 <code>dummy</code>，<code>curr</code> 指向原链表头</li>
+<li>循环处理链表：<ul>
+<li>检查剩余节点是否足够 <code>k</code> 个</li>
+<li>如果不足，跳出循环</li>
+<li>如果足够，找到当前组的尾节点和下一组的头节点</li>
+<li>翻转当前组的 <code>k</code> 个节点</li>
+<li>更新指针位置，连接翻转后的链表</li>
+</ul>
+</li>
+<li>返回虚拟头节点的下一个节点</li>
+</ol>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">reverseKGroup</span><span class="params">(ListNode head, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">dummy</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(-<span class="number">1</span>);</span><br><span class="line">        dummy.next = head;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">prev</span> <span class="operator">=</span> dummy, curr = head;</span><br><span class="line">        <span class="keyword">while</span> (curr!= <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">succ</span> <span class="operator">=</span> prev;</span><br><span class="line">            <span class="type">int</span> <span class="variable">cnt</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (cnt &lt; k) &#123;</span><br><span class="line">                <span class="keyword">if</span> (succ.next == <span class="literal">null</span>) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                succ = succ.next;</span><br><span class="line">                cnt++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (cnt != k) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            succ = succ.next;</span><br><span class="line"></span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">start</span> <span class="operator">=</span> prev;</span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">end</span> <span class="operator">=</span> prev.next;</span><br><span class="line">            prev = prev.next;</span><br><span class="line">            curr = curr.next;</span><br><span class="line">            <span class="keyword">while</span> (curr != succ) &#123;</span><br><span class="line">                <span class="type">ListNode</span> <span class="variable">next</span> <span class="operator">=</span> curr.next;</span><br><span class="line">                curr.next = prev;</span><br><span class="line">                prev = curr;</span><br><span class="line">                curr = next;</span><br><span class="line">            &#125;</span><br><span class="line">            start.next = prev;</span><br><span class="line">            end.next = succ;</span><br><span class="line">            prev = end;</span><br><span class="line">            curr = prev.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码讲解-1"><a href="#代码讲解-1" class="headerlink" title="代码讲解"></a>代码讲解</h3><ol>
+<li><strong>边界处理</strong>：如果链表为空，直接返回 <code>null</code></li>
+<li><strong>创建虚拟头节点</strong>：<code>dummy</code> 节点的 <code>next</code> 指向原链表头</li>
+<li><strong>初始化指针</strong>：<code>prev</code> 指向 <code>dummy</code>，<code>curr</code> 指向原链表头</li>
+<li><strong>检查剩余节点</strong>：<ul>
+<li>使用 <code>succ</code> 指针从 <code>prev</code> 开始移动 <code>k</code> 步</li>
+<li>如果移动过程中遇到 <code>null</code>，说明剩余节点不足 <code>k</code> 个，跳出循环</li>
+</ul>
+</li>
+<li><strong>记录位置</strong>：<ul>
+<li><code>succ</code> 指向当前组的下一个节点</li>
+<li><code>start</code> 是当前组的前一个节点</li>
+<li><code>end</code> 是当前组翻转前的头节点（翻转后的尾节点）</li>
+</ul>
+</li>
+<li><strong>翻转当前组</strong>：<ul>
+<li>使用 <code>prev</code> 和 <code>curr</code> 指针进行翻转</li>
+<li>每次将 <code>curr</code> 的下一个节点指向 <code>prev</code>，然后更新 <code>prev</code> 和 <code>curr</code></li>
+</ul>
+</li>
+<li><strong>连接链表</strong>：<ul>
+<li><code>start.next = prev</code>：将当前组的前一个节点指向翻转后的头节点</li>
+<li><code>end.next = succ</code>：将翻转后的尾节点指向原当前组的下一个节点</li>
+</ul>
+</li>
+<li><strong>更新指针</strong>：<ul>
+<li><code>prev = end</code>：将 <code>prev</code> 指向翻转后的尾节点</li>
+<li><code>curr = prev.next</code>：将 <code>curr</code> 指向下一组的头节点</li>
+</ul>
+</li>
+<li><strong>返回结果</strong>：返回虚拟头节点的下一个节点</li>
+</ol>
+<h3 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><ul>
+<li><strong>时间复杂度</strong>：O(n)，其中 n 是链表的长度。每个节点最多被访问两次</li>
+<li><strong>空间复杂度</strong>：O(1)，只使用了常数级别的额外空间</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这两道题都是链表操作的经典题目，考察了对链表指针的熟练掌握程度。它们的共同特点是：</p>
+<ol>
+<li>使用 <strong>虚拟头节点</strong> 简化边界情况处理</li>
+<li>维护多个指针来跟踪当前操作的位置</li>
+<li>进行节点的实际交换，而不是仅仅改变节点的值</li>
+<li>保持指针的正确指向，避免链表断裂</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p>LeetCode 链表交换节点问题（24、25题）</p><p><a href="http://example.com/2025/12/13/leetcode/交换链表节点问题/交换节点-24、25/">http://example.com/2025/12/13/leetcode/交换链表节点问题/交换节点-24、25/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>John Doe</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-12-13</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-12-17</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/LeetCode/">LeetCode</a><a class="link-muted mr-2" rel="tag" href="/tags/%E7%AE%97%E6%B3%95/">算法</a><a class="link-muted mr-2" rel="tag" href="/tags/%E9%93%BE%E8%A1%A8/">链表</a><a class="link-muted mr-2" rel="tag" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2025/12/13/leetcode/%E5%93%88%E5%B8%8C%E5%8E%BB%E9%87%8D%E9%97%AE%E9%A2%98/3.%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">LeetCode 3. 无重复字符的最长子串</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2025/12/12/life/Introduction/"><span class="level-item">Introduction</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card" id="comments"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/landshark.png" alt="ZALA"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">ZALA</p><p class="is-size-6 is-block">哈尔滨工业大学（深圳）</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>广东深圳, 全国可飞</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives/"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories/"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags/"><p class="title">7</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zala13" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/zala13"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Bilibili" href="https://space.bilibili.com/495714099"><i class="fab fa-bilibili"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://leetcode.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">力扣</span></span><span class="level-right"><span class="level-item tag">leetcode.cn</span></span></a></li><li><a class="level is-mobile" href="https://labuladong.online/algo/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">labuladong 的算法笔记</span></span><span class="level-right"><span class="level-item tag">labuladong.online</span></span></a></li><li><a class="level is-mobile" href="https://javabetter.cn/home.html" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Java进阶之路</span></span><span class="level-right"><span class="level-item tag">javabetter.cn</span></span></a></li><li><a class="level is-mobile" href="https://xiaolincoding.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">小林 Coding</span></span><span class="level-right"><span class="level-item tag">xiaolincoding.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Personal/"><span class="level-start"><span class="level-item">Personal</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Test/"><span class="level-start"><span class="level-item">Test</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="level-start"><span class="level-item">技术</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E6%8A%80%E6%9C%AF/LeetCode/"><span class="level-start"><span class="level-item">LeetCode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-17T14:18:58.574Z">2025-12-17</time></p><p class="title"><a href="/2025/12/17/test-no-front-matter/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-17T13:47:13.152Z">2025-12-17</time></p><p class="title"><a href="/2025/12/17/leetcode/%E6%A0%88/20.%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-17T13:46:37.675Z">2025-12-17</time></p><p class="title"><a href="/2025/12/17/leetcode/%E9%93%BE%E8%A1%A8%E6%8A%80%E5%B7%A7%E9%97%AE%E9%A2%98/%E5%8F%8C%E6%8C%87%E9%92%88/19.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-17T13:44:54.843Z">2025-12-17</time></p><p class="title"><a href="/2025/12/17/leetcode/%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%97%AE%E9%A2%98/5.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-17T13:43:21.528Z">2025-12-17</time></p><p class="title"><a href="/2025/12/17/leetcode/%E6%B1%82%E5%92%8C%E9%97%AE%E9%A2%98/n%E6%95%B0%E4%B9%8B%E5%92%8C-2%E3%80%8115/"> </a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2025/12/"><span class="level-start"><span class="level-item">December 2025</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Introductiont/"><span class="tag">Introductiont</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LeetCode/"><span class="tag">LeetCode</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Test/"><span class="tag">Test</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"><span class="tag">双指针</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"><span class="tag">滑动窗口</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%93%BE%E8%A1%A8/"><span class="tag">链表</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/zala13.svg" alt="Hexo" height="28"></a><p class="is-size-7"><span>&copy; 2025 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script data-pjax src="/js/insight.js" defer></script><script data-pjax>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

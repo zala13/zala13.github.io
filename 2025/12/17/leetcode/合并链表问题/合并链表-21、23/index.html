@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Hexo</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Hexo"><meta name="msapplication-TileImage" content="/img/glass3.jpeg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="21合并两个有序链表这是最基本的链表技巧，力扣第 21 题「合并两个有序链表」就是这个问题，给你输入两个有序链表，请你把他俩合并成一个新的有序链表：  合并两个有序链表 | 力扣 | LeetCode |  🟢将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。  示例 1： 输入：l1 &amp;#x3D; [1,2,4], l2 &amp;#x3D; [1,3,4"><meta property="og:type" content="blog"><meta property="og:title" content="Hexo"><meta property="og:url" content="http://example.com/2025/12/17/leetcode/%E5%90%88%E5%B9%B6%E9%93%BE%E8%A1%A8%E9%97%AE%E9%A2%98/%E5%90%88%E5%B9%B6%E9%93%BE%E8%A1%A8-21%E3%80%8123/"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="21合并两个有序链表这是最基本的链表技巧，力扣第 21 题「合并两个有序链表」就是这个问题，给你输入两个有序链表，请你把他俩合并成一个新的有序链表：  合并两个有序链表 | 力扣 | LeetCode |  🟢将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。  示例 1： 输入：l1 &amp;#x3D; [1,2,4], l2 &amp;#x3D; [1,3,4"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:published_time" content="2025-12-17T13:38:32.269Z"><meta property="article:modified_time" content="2025-12-17T13:55:26.260Z"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/12/17/leetcode/%E5%90%88%E5%B9%B6%E9%93%BE%E8%A1%A8%E9%97%AE%E9%A2%98/%E5%90%88%E5%B9%B6%E9%93%BE%E8%A1%A8-21%E3%80%8123/"},"headline":"Hexo","image":["http://example.com/img/og_image.png"],"datePublished":"2025-12-17T13:38:32.269Z","dateModified":"2025-12-17T13:55:26.260Z","author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"Hexo","logo":{"@type":"ImageObject","url":"http://example.com/img/zala13.svg"}},"description":"21合并两个有序链表这是最基本的链表技巧，力扣第 21 题「合并两个有序链表」就是这个问题，给你输入两个有序链表，请你把他俩合并成一个新的有序链表：  合并两个有序链表 | 力扣 | LeetCode |  🟢将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。  示例 1： 输入：l1 &#x3D; [1,2,4], l2 &#x3D; [1,3,4"}</script><link rel="canonical" href="http://example.com/2025/12/17/leetcode/%E5%90%88%E5%B9%B6%E9%93%BE%E8%A1%A8%E9%97%AE%E9%A2%98/%E5%90%88%E5%B9%B6%E9%93%BE%E8%A1%A8-21%E3%80%8123/"><link rel="icon" href="/img/glass3.jpeg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/zala13.svg" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-17T13:38:32.269Z" title="2025/12/17 21:38:32">2025-12-17</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-17T13:55:26.260Z" title="2025/12/17 21:55:26">2025-12-17</time></span><span class="level-item">8 minutes read (About 1210 words)</span></div></div><div class="content"><h1 id="21"><a href="#21" class="headerlink" title="21"></a>21</h1><p>合并两个有序链表<br>这是最基本的链表技巧，力扣第 21 题「合并两个有序链表」就是这个问题，给你输入两个有序链表，请你把他俩合并成一个新的有序链表：</p>
+<ol start="21">
+<li>合并两个有序链表 | 力扣 | LeetCode |  🟢<br>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。</li>
+</ol>
+<p>示例 1：</p>
+<p>输入：l1 &#x3D; [1,2,4], l2 &#x3D; [1,3,4]<br>输出：[1,1,2,3,4,4]<br>示例 2：</p>
+<p>输入：l1 &#x3D; [], l2 &#x3D; []<br>输出：[]<br>示例 3：</p>
+<p>输入：l1 &#x3D; [], l2 &#x3D; [0]<br>输出：[0]<br>提示：</p>
+<p>两个链表的节点数目范围是 [0, 50]<br>-100 &lt;&#x3D; Node.val &lt;&#x3D; 100<br>l1 和 l2 均按 非递减顺序 排列<br>题目来源：力扣 21. 合并两个有序链表。<br>javacpppythongojavascript</p>
+<p>&#x2F;&#x2F; 函数签名如下<br>ListNode mergeTwoLists(ListNode l1, ListNode l2);<br>这题比较简单，我们直接看解法：</p>
+<p>javacpppythongojavascript</p>
+<p>class Solution {<br>    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {<br>        &#x2F;&#x2F; 虚拟头结点<br>        ListNode dummy &#x3D; new ListNode(-1), p &#x3D; dummy;<br>        ListNode p1 &#x3D; l1, p2 &#x3D; l2;</p>
+<pre><code>    while (p1 != null &amp;&amp; p2 != null) {
+
+        // 比较 p1 和 p2 两个指针
+        // 将值较小的的节点接到 p 指针
+        if (p1.val &gt; p2.val) {
+            p.next = p2;
+            p2 = p2.next;
+        } else {
+            p.next = p1;
+            p1 = p1.next;
+        }
+        // p 指针不断前进
+        p = p.next;
+    }
+
+    if (p1 != null) {
+        p.next = p1;
+    }
+
+    if (p2 != null) {
+        p.next = p2;
+    }
+
+    return dummy.next;
+}
+</code></pre>
+<p>}<br>我们的 while 循环每次比较 p1 和 p2 的大小，把较小的节点接到结果链表上，看如下 GIF：</p>
+<p>形象地理解，这个算法的逻辑类似于拉拉链，l1, l2 类似于拉链两侧的锯齿，指针 p 就好像拉链的拉索，将两个有序链表合并。</p>
+<p>下面是算法的可视化，你可以多次点击  这一行代码，即可看到  合并两个有序链表的过程：</p>
+<p>算法可视化面板<br>代码中还用到一个链表的算法题中是很常见的「虚拟头结点」技巧，也就是 dummy 节点。你可以试试，如果不使用 dummy 虚拟节点，代码会复杂一些，需要额外处理指针 p 为空的情况。而有了 dummy 节点这个占位符，可以避免处理空指针的情况，降低代码的复杂性。</p>
+<h1 id="23"><a href="#23" class="headerlink" title="23"></a>23</h1><p>合并 k 个有序链表<br>看下力扣第 23 题「合并K个升序链表」：</p>
+<ol start="23">
+<li>合并 K 个升序链表 | 力扣 | LeetCode |  🔴<br>给你一个链表数组，每个链表都已经按升序排列。</li>
+</ol>
+<p>请你将所有链表合并到一个升序链表中，返回合并后的链表。</p>
+<p>示例 1：</p>
+<p>输入：lists &#x3D; [[1,4,5],[1,3,4],[2,6]]<br>输出：[1,1,2,3,4,4,5,6]<br>解释：链表数组如下：<br>[<br>  1-&gt;4-&gt;5,<br>  1-&gt;3-&gt;4,<br>  2-&gt;6<br>]<br>将它们合并到一个有序链表中得到。<br>1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4-&gt;5-&gt;6<br>示例 2：</p>
+<p>输入：lists &#x3D; []<br>输出：[]<br>示例 3：</p>
+<p>输入：lists &#x3D; [[]]<br>输出：[]<br>提示：</p>
+<p>k &#x3D;&#x3D; lists.length<br>0 &lt;&#x3D; k &lt;&#x3D; 10^4<br>0 &lt;&#x3D; lists[i].length &lt;&#x3D; 500<br>-10^4 &lt;&#x3D; lists[i][j] &lt;&#x3D; 10^4<br>lists[i] 按 升序 排列<br>lists[i].length 的总和不超过 10^4<br>题目来源：力扣 23. 合并 K 个升序链表。<br>javacpppythongojavascript</p>
+<p>&#x2F;&#x2F; 函数签名如下<br>ListNode mergeKLists(ListNode[] lists);<br>合并 k 个有序链表的逻辑类似合并两个有序链表，难点在于，如何快速得到 k 个节点中的最小节点，接到结果链表上？</p>
+<p>这里我们就要用到优先级队列这种数据结构，把链表节点放入一个最小堆，就可以每次获得 k 个节点中的最小节点。关于优先级队列可以参考 优先级队列（二叉堆）原理及实现，本文不展开。</p>
+<p>javacpppythongojavascript</p>
+<p>class Solution {<br>    public ListNode mergeKLists(ListNode[] lists) {<br>        if (lists.length &#x3D;&#x3D; 0) return null;<br>        &#x2F;&#x2F; 虚拟头结点<br>        ListNode dummy &#x3D; new ListNode(-1);<br>        ListNode p &#x3D; dummy;<br>        &#x2F;&#x2F; 优先级队列，最小堆<br>        PriorityQueue<ListNode> pq &#x3D; new PriorityQueue&lt;&gt;(<br>            lists.length, (a, b)-&gt;(a.val - b.val));<br>        &#x2F;&#x2F; 将 k 个链表的头结点加入最小堆<br>        for (ListNode head : lists) {<br>            if (head !&#x3D; null)<br>                pq.add(head);<br>        }</p>
+<pre><code>    while (!pq.isEmpty()) {
+        // 获取最小节点，接到结果链表中
+        ListNode node = pq.poll();
+        p.next = node;
+        if (node.next != null) {
+            pq.add(node.next);
+        }
+        // p 指针不断前进
+        p = p.next;
+    }
+    return dummy.next;
+}
+</code></pre>
+<p>}<br>你可以点开下面的可视化面板，点击  这一行代码，即可看到有序链表合并的过程：</p>
+<p>算法可视化面板<br>这个算法是面试常考题，它的时间复杂度是多少呢？</p>
+<p>优先队列 pq 中的元素个数最多是<br>k<br>k，所以一次 poll 或者 add 方法的时间复杂度是<br>O<br>(<br>l<br>o<br>g<br>k<br>)<br>O(logk)；所有的链表节点都会被加入和弹出 pq，所以算法整体的时间复杂度是<br>O<br>(<br>N<br>l<br>o<br>g<br>k<br>)<br>O(Nlogk)，其中<br>k<br>k 是链表的条数，<br>N<br>N 是这些链表的节点总数。</p>
+<p>但在这里还可以用分治算法</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p><a href="http://example.com/2025/12/17/leetcode/合并链表问题/合并链表-21、23/">http://example.com/2025/12/17/leetcode/合并链表问题/合并链表-21、23/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>John Doe</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-12-17</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-12-17</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2025/12/17/leetcode/DFS(traceback)/22.%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/"><i class="level-item fas fa-chevron-left"></i><span class="level-item"> </span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2025/12/14/leetcode/%E6%8E%A5%E9%9B%A8%E6%B0%B4%E9%97%AE%E9%A2%98/%E6%8E%A5%E9%9B%A8%E6%B0%B4%E9%97%AE%E9%A2%98-11%E3%80%8142/"><span class="level-item">接雨水问题-11、42</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card" id="comments"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/landshark.png" alt="ZALA"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">ZALA</p><p class="is-size-6 is-block">哈尔滨工业大学（深圳）</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>广东深圳, 全国可飞</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives/"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories/"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags/"><p class="title">7</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zala13" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/zala13"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Bilibili" href="https://space.bilibili.com/495714099"><i class="fab fa-bilibili"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://leetcode.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">力扣</span></span><span class="level-right"><span class="level-item tag">leetcode.cn</span></span></a></li><li><a class="level is-mobile" href="https://labuladong.online/algo/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">labuladong 的算法笔记</span></span><span class="level-right"><span class="level-item tag">labuladong.online</span></span></a></li><li><a class="level is-mobile" href="https://javabetter.cn/home.html" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Java进阶之路</span></span><span class="level-right"><span class="level-item tag">javabetter.cn</span></span></a></li><li><a class="level is-mobile" href="https://xiaolincoding.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">小林 Coding</span></span><span class="level-right"><span class="level-item tag">xiaolincoding.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Personal/"><span class="level-start"><span class="level-item">Personal</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Test/"><span class="level-start"><span class="level-item">Test</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="level-start"><span class="level-item">技术</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E6%8A%80%E6%9C%AF/LeetCode/"><span class="level-start"><span class="level-item">LeetCode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-17T14:18:58.574Z">2025-12-17</time></p><p class="title"><a href="/2025/12/17/test-no-front-matter/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-17T13:47:13.152Z">2025-12-17</time></p><p class="title"><a href="/2025/12/17/leetcode/%E6%A0%88/20.%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-17T13:46:37.675Z">2025-12-17</time></p><p class="title"><a href="/2025/12/17/leetcode/%E9%93%BE%E8%A1%A8%E6%8A%80%E5%B7%A7%E9%97%AE%E9%A2%98/%E5%8F%8C%E6%8C%87%E9%92%88/19.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-17T13:44:54.843Z">2025-12-17</time></p><p class="title"><a href="/2025/12/17/leetcode/%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%97%AE%E9%A2%98/5.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-17T13:43:21.528Z">2025-12-17</time></p><p class="title"><a href="/2025/12/17/leetcode/%E6%B1%82%E5%92%8C%E9%97%AE%E9%A2%98/n%E6%95%B0%E4%B9%8B%E5%92%8C-2%E3%80%8115/"> </a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2025/12/"><span class="level-start"><span class="level-item">December 2025</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Introductiont/"><span class="tag">Introductiont</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LeetCode/"><span class="tag">LeetCode</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Test/"><span class="tag">Test</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"><span class="tag">双指针</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"><span class="tag">滑动窗口</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%93%BE%E8%A1%A8/"><span class="tag">链表</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/zala13.svg" alt="Hexo" height="28"></a><p class="is-size-7"><span>&copy; 2025 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script data-pjax src="/js/insight.js" defer></script><script data-pjax>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
