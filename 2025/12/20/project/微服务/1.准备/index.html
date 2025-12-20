@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>1.准备 - Hexo</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Hexo"><meta name="msapplication-TileImage" content="/img/glass3.jpeg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="价值在学习该项目前，应该对其价值有一个清晰的认识，明确学习该项目能够带来哪些提升。 优点 立意：在社区项目中经常会用到定时任务，比如定时进行数据同步、定时处理合并消息请求等，定时微服务可以很好地解决这些问题。因此除了直接调用类似 XXL-JOB 等定时模块，手动实现一个更加轻量化、可扩展的定时任务处理机制就更具有实际意义，有助于深入理解微服务架构设计。  属性：定时场景是一个通用且业务关联性弱的场"><meta property="og:type" content="blog"><meta property="og:title" content="1.准备"><meta property="og:url" content="http://example.com/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%87%86%E5%A4%87/"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="价值在学习该项目前，应该对其价值有一个清晰的认识，明确学习该项目能够带来哪些提升。 优点 立意：在社区项目中经常会用到定时任务，比如定时进行数据同步、定时处理合并消息请求等，定时微服务可以很好地解决这些问题。因此除了直接调用类似 XXL-JOB 等定时模块，手动实现一个更加轻量化、可扩展的定时任务处理机制就更具有实际意义，有助于深入理解微服务架构设计。  属性：定时场景是一个通用且业务关联性弱的场"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:published_time" content="2025-12-20T13:41:12.000Z"><meta property="article:modified_time" content="2025-12-20T13:41:18.169Z"><meta property="article:author" content="zala13"><meta property="article:tag" content="微服务， 定时微服务"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%87%86%E5%A4%87/"},"headline":"1.准备","image":["http://example.com/img/og_image.png"],"datePublished":"2025-12-20T13:41:12.000Z","dateModified":"2025-12-20T13:41:18.169Z","author":{"@type":"Person","name":"zala13"},"publisher":{"@type":"Organization","name":"Hexo","logo":{"@type":"ImageObject","url":"http://example.com/img/zala13.svg"}},"description":"价值在学习该项目前，应该对其价值有一个清晰的认识，明确学习该项目能够带来哪些提升。 优点 立意：在社区项目中经常会用到定时任务，比如定时进行数据同步、定时处理合并消息请求等，定时微服务可以很好地解决这些问题。因此除了直接调用类似 XXL-JOB 等定时模块，手动实现一个更加轻量化、可扩展的定时任务处理机制就更具有实际意义，有助于深入理解微服务架构设计。  属性：定时场景是一个通用且业务关联性弱的场"}</script><link rel="canonical" href="http://example.com/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%87%86%E5%A4%87/"><link rel="icon" href="/img/glass3.jpeg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/zala13.svg" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-20T13:41:12.000Z" title="2025/12/20 21:41:12">2025-12-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-20T13:41:18.169Z" title="2025/12/20 21:41:18">2025-12-20</time></span><span class="level-item"> zala13 </span><span class="level-item"><a class="link-muted" href="/categories/Project/">Project</a></span><span class="level-item">9 minutes read (About 1325 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">1.准备</h1><div class="content"><h1 id="价值"><a href="#价值" class="headerlink" title="价值"></a>价值</h1><p>在学习该项目前，应该对其价值有一个清晰的认识，明确学习该项目能够带来哪些提升。</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
+<li><p>立意：在社区项目中经常会用到定时任务，比如定时进行数据同步、定时处理合并消息请求等，定时微服务可以很好地解决这些问题。因此除了直接调用类似 XXL-JOB 等定时模块，手动实现一个更加轻量化、可扩展的定时任务处理机制就更具有实际意义，有助于深入理解微服务架构设计。</p>
+</li>
+<li><p>属性：定时场景是一个通用且业务关联性弱的场景，适合做成微服务独立部署，或作为中台服务去维护。</p>
+</li>
+<li><p>核心：定时服务并不复杂，场景便于理解，但是重点在于定时的精度、任务的吞吐量等问题，能够锻炼对分布式系统的理解。</p>
+</li>
+<li><p>技术栈：在针对核心问题上，核心组件就是 MySQL、Redis、消息队列（作为异步回调能力）等，技术栈相对简单，便于快速上手。</p>
+</li>
+</ul>
+<h2 id="价值-1"><a href="#价值-1" class="headerlink" title="价值"></a>价值</h2><p>重点在于架构能力的提高，定时微服务决定采用模块化设计、分治策略等设计理念，能够有效在核心问题上提供较好的解决方案。</p>
+<h1 id="背景与现状"><a href="#背景与现状" class="headerlink" title="背景与现状"></a>背景与现状</h1><p>了解项目价值后，需要继续对项目在实际业务中出现的场景进行分析，明确项目的背景与现状。</p>
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><ol>
+<li>某类办公软件，每天早上9点通知员工打卡</li>
+<li>订单下单15分钟后，若未支付则自动关闭订单</li>
+<li>红包超时未领取，自动退回到账户余额</li>
+</ol>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>针对上述业务场景分析，会发现大多涉及一个定时&#x2F;周期执行的情况，因此关于“定时”属性可以将其与业务属性剥离，形成类似“闹钟”的服务，至于唤醒某些业务后，需要其单独处理自己的业务逻辑。</p>
+<h2 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h2><p>定时场景在市面上有较多的解决方案，但实际上：</p>
+<ol>
+<li><p>大多公司对于定时任务需求并不复杂，重点在于定时，为此引入功能强大但臃肿的任务调度组件是不合适的，前期学习成本、接入成本与后期维护成本都会偏高</p>
+</li>
+<li><p>且基于下述表格对比的结果来看，设计功能聚焦、接入轻量、维护成本低且支持动态灵活的任务定时&#x2F;周期处理的微服务有一定意义</p>
+</li>
+<li><p>决定设计一款依赖简单、学习成本较低、性能较优的定时微服务</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>介绍</th>
+<th>特性</th>
+<th>不足</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Java Timer</td>
+<td>Java标准库中的定时器工具</td>
+<td>1. 简单易用<br>2. 基于单线程执行任务</td>
+<td>• 单线程执行可能导致任务间相互影响<br>• 不适合执行长时间运行的任务<br>• 异常处理不足</td>
+</tr>
+<tr>
+<td>RocketMq</td>
+<td>分布式消息队列系统</td>
+<td>1. 基于消息队列的定时任务执行<br>2. 高可用性和可扩展性<br>3. 支持延迟消息和定时消息</td>
+<td>• 需要额外维护一个消息队列系统<br>• 延迟精度可能受到网络延迟和系统负载的影响<br>• 存在极小的消息丢失或重复消费的风险</td>
+</tr>
+<tr>
+<td>其他公司内部实现</td>
+<td>很多公司内部都有自定定时器的实现，但都只能内部使用，且服务设计多与内部业务特性挂钩</td>
+<td>-</td>
+<td>• 仅面向团队内部使用</td>
+</tr>
+<tr>
+<td>elastic-job-lite</td>
+<td>轻量级分布式任务调度框架</td>
+<td>1. 支持弹性扩展和任务分片<br>2. 集成简单，配置丰富<br>3. 基于ZooKeeper协调服务</td>
+<td>• 依赖ZooKeeper作为协调服务，增加了系统复杂性<br>• 对于简单的定时场景可能过于复杂</td>
+</tr>
+<tr>
+<td>xxl-job</td>
+<td>代表性的自定义任务调度工具</td>
+<td>1. 可定制性强<br>2. 可集成到现有应用<br>3. 功能灵活</td>
+<td>• 学习曲线可能陡峭<br>• 可能需要额外开发和维护成本<br>• 对于简单的定时任务需求过于复杂</td>
+</tr>
+<tr>
+<td>Quartz</td>
+<td>功能强大的任务调度框架</td>
+<td>1. 灵活的任务调度<br>2. 支持集群和持久化<br>3. 可与数据库结合使用</td>
+<td>• 配置和管理相对复杂<br>• 资源消耗较大，特别是在大规模任务调度时<br>• 对于简单的定时需求处理过于复杂</td>
+</tr>
+<tr>
+<td>Robfig&#x2F;Cron</td>
+<td>golang版本github上star最多的开源框架</td>
+<td>1. 目前在github中的star最多，得到广泛的使用和测试，评级结果表明，与其他go开源框架相比，它拥有最高的调度准确性</td>
+<td>• 设计用于在单个应用实例中执行定时任务<br>• 不支持分布式任务调度<br>• 缺乏任务执行结果的监控和告警机制</td>
+</tr>
+</tbody></table>
+</div><div class="article-licensing box"><div class="licensing-title"><p>1.准备</p><p><a href="http://example.com/2025/12/20/project/微服务/1.准备/">http://example.com/2025/12/20/project/微服务/1.准备/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>zala13</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2025-12-20</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2025-12-20</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1%EF%BC%8C-%E5%AE%9A%E6%97%B6%E5%BE%AE%E6%9C%8D%E5%8A%A1/">微服务， 定时微服务</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/0.%E4%BB%8B%E7%BB%8D/"><span class="level-item">0.介绍</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card" id="comments"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/landshark.png" alt="ZALA"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">ZALA</p><p class="is-size-6 is-block">哈尔滨工业大学（深圳）</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>广东深圳, 全国可飞</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives/"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories/"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags/"><p class="title">12</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zala13" target="_blank" rel="me noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/zala13"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Bilibili" href="https://space.bilibili.com/495714099"><i class="fab fa-bilibili"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://leetcode.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">力扣</span></span><span class="level-right"><span class="level-item tag">leetcode.cn</span></span></a></li><li><a class="level is-mobile" href="https://labuladong.online/algo/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">labuladong 的算法笔记</span></span><span class="level-right"><span class="level-item tag">labuladong.online</span></span></a></li><li><a class="level is-mobile" href="https://javabetter.cn/home.html" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Java进阶之路</span></span><span class="level-right"><span class="level-item tag">javabetter.cn</span></span></a></li><li><a class="level is-mobile" href="https://xiaolincoding.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">小林 Coding</span></span><span class="level-right"><span class="level-item tag">xiaolincoding.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Personal/"><span class="level-start"><span class="level-item">Personal</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Project/"><span class="level-start"><span class="level-item">Project</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/Test/"><span class="level-start"><span class="level-item">Test</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="level-start"><span class="level-item">技术</span></span><span class="level-end"><span class="level-item tag">5</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E6%8A%80%E6%9C%AF/LeetCode/"><span class="level-start"><span class="level-item">LeetCode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-20T13:41:12.000Z">2025-12-20</time></p><p class="title"><a href="/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%87%86%E5%A4%87/">1.准备</a></p><p class="categories"><a href="/categories/Project/">Project</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-20T12:27:33.000Z">2025-12-20</time></p><p class="title"><a href="/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/0.%E4%BB%8B%E7%BB%8D/">0.介绍</a></p><p class="categories"><a href="/categories/Project/">Project</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-18T15:00:00.000Z">2025-12-18</time></p><p class="title"><a href="/2025/12/18/leetcode/31.%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97/">下一个排列</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-18T15:00:00.000Z">2025-12-18</time></p><p class="title"><a href="/2025/12/18/%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%80%83%E9%9D%9E%E7%AE%97%E6%B3%95%E6%89%8B%E6%92%95/%E5%9F%BA%E7%A1%80%E6%80%9D%E7%BB%B4%E4%BB%A3%E7%A0%81/">基础思维代码</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-17T14:00:00.000Z">2025-12-17</time></p><p class="title"><a href="/2025/12/17/leetcode/%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E9%97%AE%E9%A2%98/%E4%BA%A4%E6%8D%A2%E8%8A%82%E7%82%B9-24%E3%80%8125/">LeetCode 链表交换节点问题（24、25题）</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a href="/categories/%E6%8A%80%E6%9C%AF/LeetCode/">LeetCode</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2025/12/"><span class="level-start"><span class="level-item">December 2025</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Introduction/"><span class="tag">Introduction</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LeetCode/"><span class="tag">LeetCode</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Test/"><span class="tag">Test</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%B8%AD%E7%AD%89/"><span class="tag">中等</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"><span class="tag">双指针</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%97%E5%85%B8%E5%BA%8F/"><span class="tag">字典序</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1%EF%BC%8C-%E5%AE%9A%E6%97%B6%E5%BE%AE%E6%9C%8D%E5%8A%A1/"><span class="tag">微服务， 定时微服务</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E7%BB%84/"><span class="tag">数组</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%BB%E9%94%81/"><span class="tag">死锁</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"><span class="tag">滑动窗口</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%93%BE%E8%A1%A8/"><span class="tag">链表</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/zala13.svg" alt="Hexo" height="28"></a><p class="is-size-7"><span>&copy; 2025 zala13</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script data-pjax src="/js/insight.js" defer></script><script data-pjax>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
