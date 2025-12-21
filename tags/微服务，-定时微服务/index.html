@@ -29,7 +29,7 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/zala13.svg" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags/">Tags</a></li><li class="is-active"><a href="#" aria-current="page">微服务， 定时微服务</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-20T13:41:12.000Z" title="2025/12/20 21:41:12">2025-12-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-21T06:24:36.887Z" title="2025/12/21 14:24:36">2025-12-21</time></span><span class="level-item"> zala13 </span><span class="level-item"><a class="link-muted" href="/categories/Project/">Project</a></span><span class="level-item">21 minutes read (About 3161 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%87%86%E5%A4%87/">1.准备</a></p><div class="content"><h1 id="价值"><a href="#价值" class="headerlink" title="价值"></a>价值</h1><p>在学习该项目前，应该对其价值有一个清晰的认识，明确学习该项目能够带来哪些提升。</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/zala13.svg" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags/">Tags</a></li><li class="is-active"><a href="#" aria-current="page">微服务， 定时微服务</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-20T13:41:12.000Z" title="2025/12/20 21:41:12">2025-12-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-21T07:35:46.192Z" title="2025/12/21 15:35:46">2025-12-21</time></span><span class="level-item"> zala13 </span><span class="level-item"><a class="link-muted" href="/categories/Project/">Project</a></span><span class="level-item">25 minutes read (About 3746 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%87%86%E5%A4%87/">1.准备</a></p><div class="content"><h1 id="价值"><a href="#价值" class="headerlink" title="价值"></a>价值</h1><p>在学习该项目前，应该对其价值有一个清晰的认识，明确学习该项目能够带来哪些提升。</p>
 <h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
 <li><p>立意：在社区项目中经常会用到定时任务，比如定时进行数据同步、定时处理合并消息请求等，定时微服务可以很好地解决这些问题。因此除了直接调用类似 XXL-JOB 等定时模块，手动实现一个更加轻量化、可扩展的定时任务处理机制就更具有实际意义，有助于深入理解微服务架构设计。</p>
 </li>
@@ -166,6 +166,28 @@
 <li><p>数据分区<br> 数据分区的思路其实跟分库分表理念类似，同样期望将数据进行拆分后提升并发度，提升检索效率。所以数据分区理念还可以运用在缓存数据等地方，如 Redis 数据同样进行分区设计等</p>
 </li>
 <li><p>线程池<br> 由于定时微服务对数据库进行操作是一个 IO 流，所以可以基于线程池技术，采用多线程，为每个任务分配一个线程进行处理。</p>
+</li>
+</ol>
+<h1 id="难点-任务异常"><a href="#难点-任务异常" class="headerlink" title="难点 - 任务异常"></a>难点 - 任务异常</h1><h2 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h2><p>在实际业务中，对于定时服务至少有一个要求：必须要触发，尽管可能有时间误差。但实际情况可能导致任务无法正常运行，主要分为以下三种异常情况：</p>
+<ol>
+<li><p>新建、激活接口异常：创建、激活任务接口发生异常。此时可以通过接口返回值反馈给用户，并可以通过主动重试等操作进行解决</p>
+</li>
+<li><p>任务流传异常：定时任务一般存储到数据库就算创建成功，后续如何确保任务消息能够顺利准时到达受方，就是定时微服务的职责，如果出现以下异常可能导致任务无法触发：</p>
+<ol>
+<li>数据库异常：整个流转过程中会频繁发生数据库存取，期间若数据库异常，可能导致任务消息丢失</li>
+<li>中间件存取异常：若将数据库任务缓存了一份到 Redis 中，那必定期间会发生很多 Redis 存取</li>
+</ol>
+</li>
+<li><p>任务出触发阶段异常：当任务进入触发阶段，需要回调业务方告知触发结果，如果回调失败，对于业务方来说同样属于任务执行失败</p>
+</li>
+</ol>
+<h2 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h2><p>针对可能出现的问题可以考虑以下方案：</p>
+<ol>
+<li><p>重试机制：如果是偶发性异常，如数据库抖动、Redis抖动等，这类异常是可以通过重试机制解决的</p>
+</li>
+<li><p>失败兜底机制：如果遇到重试无法解决的问题，如存储服务某个节点崩溃，正在进行替换，需要一定时间。这期间的任务需要标记为失败状态等待后续中间件恢复再重试。一般通过运行兜底的“定时脚本”任务，来处理这些失败任务，通常需要进行全盘扫描，运行成本较高</p>
+</li>
+<li><p>失败报警机制：如果任务失败次数超过一定阈值，需要及时报警通知相关人员，及时处理，主要针对无法再次运行成功的任务</p>
 </li>
 </ol>
 </div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-20T12:27:33.000Z" title="2025/12/20 20:27:33">2025-12-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-20T13:28:13.961Z" title="2025/12/20 21:28:13">2025-12-20</time></span><span class="level-item"> zala13 </span><span class="level-item"><a class="link-muted" href="/categories/Project/">Project</a></span><span class="level-item">a minute read (About 211 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/0.%E4%BB%8B%E7%BB%8D/">0.介绍</a></p><div class="content"><h1 id="为什么？"><a href="#为什么？" class="headerlink" title="为什么？"></a>为什么？</h1><p>现在技术领域有较成熟的项目管理系统，如：禅道、TAPD，但其更多关注点在于需求迭代和缺陷本身，对项目资源管控以及流程引擎关注较少。因此可以考虑设计一款智能的项目管理系统，核心在于对项目资源录入、任务智能流转分配等方面，目标是建立完整的 CRM 系统，结合 LLM ，该项目将有无限可能。</p>
