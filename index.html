@@ -1,562 +1,185 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Hexo</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Hexo"><meta name="msapplication-TileImage" content="/img/glass3.jpeg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Hexo"><meta property="og:url" content="http://example.com/"><meta property="og:site_name" content="Hexo"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:author" content="ZALA"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com"},"headline":"Hexo","image":["http://example.com/img/og_image.png"],"author":{"@type":"Person","name":"ZALA"},"publisher":{"@type":"Organization","name":"Hexo","logo":{"@type":"ImageObject","url":"http://example.com/img/zala13.svg"}},"description":""}</script><link rel="icon" href="/img/glass3.jpeg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
-  (function () {
-      function switchTab() {
-          if (!location.hash) {
-            return;
-          }
-
-          const id = '#' + CSS.escape(location.hash.substring(1));
-          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
-          if (!$tabMenu) {
-            return;
-          }
-
-          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
-          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
-          Array.from($tabMenuContainer.querySelectorAll('a'))
-              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
-              .forEach($content => $content.classList.add('is-hidden'));
-
-          if ($tabMenu) {
-              $tabMenu.parentElement.classList.add('is-active');
-          }
-          const $activeTab = document.querySelector(id);
-          if ($activeTab) {
-              $activeTab.classList.remove('is-hidden');
-          }
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo</title><meta name="author" content="ZALA"><meta name="copyright" content="ZALA"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
+<meta property="article:author" content="ZALA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Hexo",
+  "alternateName": [
+    "example.com"
+  ],
+  "url": "http://example.com/"
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
       }
-      switchTab();
-      window.addEventListener('hashchange', switchTab, false);
-  })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/zala13.svg" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-12T12:14:04.000Z" title="2025/12/12 20:14:04">2025-12-12</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-21T08:56:43.872Z" title="2025/12/21 16:56:43">2025-12-21</time></span><span class="level-item"><a class="link-muted" href="/categories/Personal/">Personal</a></span><span class="level-item">2 minutes read (About 292 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/12/12/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D%20Introduction/">Introduction</a></p><div class="content"><h1 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h1><p>我是 <strong>ZALA</strong>，目前就读于<strong>哈尔滨工业大学（深圳）</strong>，坐标<strong>广东深圳</strong>。</p>
-<p>虽然阴差阳错选择了<em>电气工程及其自动化</em>专业，但对 <strong>Code</strong> 持有着真诚且炽热的心！</p>
-<h1 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h1><h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><ul>
-<li><strong>Java</strong>：熟练掌握Java核心技术，包括集合框架、多线程、IO 流等，了解设计模式和 JVM 基础知识</li>
-<li><strong>C++</strong>：扎实的面向对象编程基础，熟悉STL容器和算法，了解内存管理和多线程编程</li>
-</ul>
-<h2 id="后端开发"><a href="#后端开发" class="headerlink" title="后端开发"></a>后端开发</h2><ul>
-<li>熟悉常见的后端开发框架、数据库设计与优化、常用中间件，熟练掌握 Git、Maven、IDEA等主流开发工具</li>
-<li>完成社区项目，正在学习微服务架构</li>
-</ul>
-<h2 id="AI应用开发"><a href="#AI应用开发" class="headerlink" title="AI应用开发"></a>AI应用开发</h2><ul>
-<li>熟悉 AI 应用开发的核心技术要点，如 RAG 知识库构建与检索、Agent 架构设计、提示词工程、MCP等</li>
-<li>完成 RAG 知识库开发、Agent 边缘设备本地部署</li>
-</ul>
-<h2 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h2><ul>
-<li>GitHub：<a target="_blank" rel="noopener" href="https://github.com/zala13">zala13</a></li>
-<li>Email：<a href="zalainsz@outlook.com">zalainsz@outlook.com</a></li>
-</ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2026-01-04T16:04:25.044Z" title="2026/1/5 00:04:25">2026-01-05</time></span><span class="level-item">Updated&nbsp;<time dateTime="2026-01-04T16:04:25.044Z" title="2026/1/5 00:04:25">2026-01-05</time></span><span class="level-item">a few seconds read (About 0 words)</span></div></div><div class="content"></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-21T13:41:12.000Z" title="2025/12/21 21:41:12">2025-12-21</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-22T06:13:58.531Z" title="2025/12/22 14:13:58">2025-12-22</time></span><span class="level-item"> zala13 </span><span class="level-item"><a class="link-muted" href="/categories/Project/">Project</a></span><span class="level-item">4 minutes read (About 670 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/12/21/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/2.%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">2.架构设计</a></p><div class="content"><h1 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h1><p>首先针对架构设计，介绍比较常用的几个思路</p>
-<h2 id="主动轮询"><a href="#主动轮询" class="headerlink" title="主动轮询"></a>主动轮询</h2><p>这是实现定时器最简单粗暴的方式：<strong>轮询 + 触发</strong>，主要流程有：</p>
-<ol>
-<li><p>注册定时器：按显式的任务执行时间，制定一系列定时任务</p>
-</li>
-<li><p>节点自轮询：每间隔一个微小的时间范围，对定时任务列表进行全量查询</p>
-</li>
-<li><p>过滤&amp;触发：以执行时间小于等于当前时刻作为过滤条件，摘出满足执行条件的定时任务进行执行</p>
-</li>
-</ol>
-<p>但这样的定时器需要承担 O(N) 的查询时间复杂度</p>
-<h2 id="存储结构优化"><a href="#存储结构优化" class="headerlink" title="存储结构优化"></a>存储结构优化</h2><h3 id="有序表"><a href="#有序表" class="headerlink" title="有序表"></a>有序表</h3><p>基于有序表提升查询效率</p>
-<p>即利用存储结构，将时间复杂度均摊到每一笔操作中。例如使用红黑树或跳表，通过牺牲插入时间复杂度，降低查询时间复杂度</p>
-<p>此处选用 Redis ZSet，以定时任务执行时间为 Score 进行有序结构的搭建，实现流程如下：</p>
-<ol>
-<li>以 Redis ZSet 作为存储介质（即所有元素始终按照 Score 排序好）</li>
-<li>每次添加定时任务时，执行 ZAdd 动作，以执行时间的时间戳作为排序的键（Score）进行有序结构的搭建</li>
-<li>每次查询定时任务时，执行 ZRangeByScore 动作，以当前时刻的时间戳加上一个微小偏移量（1s）作为 Score 的左右边界（因为要选择的是某一段时间已经到期需要执行的任务）</li>
-</ol>
-<h2 id="横向分治"><a href="#横向分治" class="headerlink" title="横向分治"></a>横向分治</h2><p>通过时间范围分片，减少查询设计的任务数量</p>
-<p>当每次查询的时候，其实是在查找将要执行的任务，也就是当前时间点以及一段时间片内的任务，这是即将执行的任务，是真正的目标。在此之后的任务在查找过程没有实际用途且增大了数据规模</p>
-<p>因此可以将整个时间线按照<strong>时间片</strong>进行切割，将和当前时刻同属一个时间片的任务视为即将执行的任务，而从下一个时间片开始往后的任务都视为低优先级的定时任务</p>
-<p>在具体实现中，我们可以采取1分钟作为分片的范围，实现流程如下：</p>
-<ol>
-<li>插入每笔定时任务时，根据执行时间推算出所属分钟级范围表达式，如2025-12-22-2:13:26属于2025-12-22-2:13:00 -&gt; 2025-12-22-2:14:00</li>
-</ol>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-20T13:41:12.000Z" title="2025/12/20 21:41:12">2025-12-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-21T08:58:51.480Z" title="2025/12/21 16:58:51">2025-12-21</time></span><span class="level-item"> zala13 </span><span class="level-item"><a class="link-muted" href="/categories/Project/">Project</a></span><span class="level-item">25 minutes read (About 3746 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%87%86%E5%A4%87/">1.准备</a></p><div class="content"><h1 id="价值"><a href="#价值" class="headerlink" title="价值"></a>价值</h1><p>在学习该项目前，应该对其价值有一个清晰的认识，明确学习该项目能够带来哪些提升。</p>
-<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
-<li><p>立意：在社区项目中经常会用到定时任务，比如定时进行数据同步、定时处理合并消息请求等，定时微服务可以很好地解决这些问题。因此除了直接调用类似 XXL-JOB 等定时模块，手动实现一个更加轻量化、可扩展的定时任务处理机制就更具有实际意义，有助于深入理解微服务架构设计。</p>
-</li>
-<li><p>属性：定时场景是一个通用且业务关联性弱的场景，适合做成微服务独立部署，或作为中台服务去维护。</p>
-</li>
-<li><p>核心：定时服务并不复杂，场景便于理解，但是重点在于定时的精度、任务的吞吐量等问题，能够锻炼对分布式系统的理解。</p>
-</li>
-<li><p>技术栈：在针对核心问题上，核心组件就是 MySQL、Redis、消息队列（作为异步回调能力）等，技术栈相对简单，便于快速上手。</p>
-</li>
-</ul>
-<h2 id="价值-1"><a href="#价值-1" class="headerlink" title="价值"></a>价值</h2><p>重点在于架构能力的提高，定时微服务决定采用模块化设计、分治策略等设计理念，能够有效在核心问题上提供较好的解决方案。</p>
-<h1 id="背景与现状"><a href="#背景与现状" class="headerlink" title="背景与现状"></a>背景与现状</h1><p>了解项目价值后，需要继续对项目在实际业务中出现的场景进行分析，明确项目的背景与现状。</p>
-<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><ol>
-<li>某类办公软件，每天早上9点通知员工打卡</li>
-<li>订单下单15分钟后，若未支付则自动关闭订单</li>
-<li>红包超时未领取，自动退回到账户余额</li>
-</ol>
-<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>针对上述业务场景分析，会发现大多涉及一个定时&#x2F;周期执行的情况，因此关于“定时”属性可以将其与业务属性剥离，形成类似“闹钟”的服务，至于唤醒某些业务后，需要其单独处理自己的业务逻辑。</p>
-<h2 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h2><p>定时场景在市面上有较多的解决方案，但实际上：</p>
-<ol>
-<li><p>大多公司对于定时任务需求并不复杂，重点在于定时，为此引入功能强大但臃肿的任务调度组件是不合适的，前期学习成本、接入成本与后期维护成本都会偏高</p>
-</li>
-<li><p>且基于下述表格对比的结果来看，设计功能聚焦、接入轻量、维护成本低且支持动态灵活的任务定时&#x2F;周期处理的微服务有一定意义</p>
-</li>
-<li><p>决定设计一款依赖简单、学习成本较低、性能较优的定时微服务</p>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>方案</th>
-<th>介绍</th>
-<th>特性</th>
-<th>不足</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Java Timer</td>
-<td>Java标准库中的定时器工具</td>
-<td>1. 简单易用<br>2. 基于单线程执行任务</td>
-<td>• 单线程执行可能导致任务间相互影响<br>• 不适合执行长时间运行的任务<br>• 异常处理不足</td>
-</tr>
-<tr>
-<td>RocketMq</td>
-<td>分布式消息队列系统</td>
-<td>1. 基于消息队列的定时任务执行<br>2. 高可用性和可扩展性<br>3. 支持延迟消息和定时消息</td>
-<td>• 需要额外维护一个消息队列系统<br>• 延迟精度可能受到网络延迟和系统负载的影响<br>• 存在极小的消息丢失或重复消费的风险</td>
-</tr>
-<tr>
-<td>其他公司内部实现</td>
-<td>很多公司内部都有自定定时器的实现，但都只能内部使用，且服务设计多与内部业务特性挂钩</td>
-<td>-</td>
-<td>• 仅面向团队内部使用</td>
-</tr>
-<tr>
-<td>elastic-job-lite</td>
-<td>轻量级分布式任务调度框架</td>
-<td>1. 支持弹性扩展和任务分片<br>2. 集成简单，配置丰富<br>3. 基于ZooKeeper协调服务</td>
-<td>• 依赖ZooKeeper作为协调服务，增加了系统复杂性<br>• 对于简单的定时场景可能过于复杂</td>
-</tr>
-<tr>
-<td>xxl-job</td>
-<td>代表性的自定义任务调度工具</td>
-<td>1. 可定制性强<br>2. 可集成到现有应用<br>3. 功能灵活</td>
-<td>• 学习曲线可能陡峭<br>• 可能需要额外开发和维护成本<br>• 对于简单的定时任务需求过于复杂</td>
-</tr>
-<tr>
-<td>Quartz</td>
-<td>功能强大的任务调度框架</td>
-<td>1. 灵活的任务调度<br>2. 支持集群和持久化<br>3. 可与数据库结合使用</td>
-<td>• 配置和管理相对复杂<br>• 资源消耗较大，特别是在大规模任务调度时<br>• 对于简单的定时需求处理过于复杂</td>
-</tr>
-<tr>
-<td>Robfig&#x2F;Cron</td>
-<td>golang版本github上star最多的开源框架</td>
-<td>1. 目前在github中的star最多，得到广泛的使用和测试，评级结果表明，与其他go开源框架相比，它拥有最高的调度准确性</td>
-<td>• 设计用于在单个应用实例中执行定时任务<br>• 不支持分布式任务调度<br>• 缺乏任务执行结果的监控和告警机制</td>
-</tr>
-</tbody></table>
-<h1 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h1><p>针对架构设计需要做到以下几点：</p>
-<ol>
-<li><p>充足的准备工作：信息收集、技术调研</p>
-</li>
-<li><p>要有成套、成体系的方法论：</p>
-<ol>
-<li><strong>准备阶段</strong>：诉求摸底、请求量确认、精准性深究、重难点分析</li>
-<li><strong>设计阶段</strong>：上下游服务分析、存储选型、流程串联</li>
-<li><strong>优化阶段</strong>：设计复盘、潜在优化点</li>
-</ol>
-</li>
-</ol>
-<h2 id="准备阶段"><a href="#准备阶段" class="headerlink" title="准备阶段"></a>准备阶段</h2><ol>
-<li>诉求摸底：摸清整体诉求，了解清楚是做什么、业务流程是怎样、核心功能点有哪些</li>
-<li>请求量确认：根据实际QPS量级设计，避免过多、过少</li>
-<li>精准性深究：分析定时任务的精准性要求，是否需要支持秒级、毫秒级的定时任务</li>
-<li>重难点分析：分析定时任务中可能遇到的重难点问题，能够加深对设计的理解</li>
-</ol>
-<h2 id="设计阶段"><a href="#设计阶段" class="headerlink" title="设计阶段"></a>设计阶段</h2><p>架构&#x3D;服务+存储+流程，即有哪些需要提供的服务、存储用什么、业务流程如何把服务和存储串联起来</p>
-<h3 id="上下游服务"><a href="#上下游服务" class="headerlink" title="上下游服务"></a>上下游服务</h3><p>针对定时微服务的分析，可能涉及的上下游服务较少。通常成型项目可能分为信息服务、库存服务、订单服务等。而定时微服务则主要负责处理定时任务，与其他服务进行交互时，通常只需要调用其提供的接口即可。</p>
-<h3 id="存储选型"><a href="#存储选型" class="headerlink" title="存储选型"></a>存储选型</h3><p>后端开发重要的职责是与数据打交道，因此在设计定时微服务时，需要考虑如何存储定时任务的相关信息。</p>
-<p>存储的选型可以考虑到：存储场景、可靠性、性能要求、团队技术栈等因素。较为常用的自然是 MySQL、Redis 等。</p>
-<h3 id="流程串联"><a href="#流程串联" class="headerlink" title="流程串联"></a>流程串联</h3><p>在完成好服务设计、存储选型后，再考虑实际的数据流转流程，确保能够正常运行。</p>
-<p>同时在该阶段就要考虑对难点、要点进行详细分析。<strong>核心问题：流程细节、高并发、高精准</strong></p>
-<h2 id="优化阶段"><a href="#优化阶段" class="headerlink" title="优化阶段"></a>优化阶段</h2><p>初步架构设计后，进行整体复盘与优化点考虑。</p>
-<h1 id="难点-高精准"><a href="#难点-高精准" class="headerlink" title="难点 - 高精准"></a>难点 - 高精准</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>定时场景的高精准问题指：预期设定的触发时间与实际触发时间之间的差值问题。即需要针对差值进行优化，越高的精准度适用的业务范围更广。</p>
-<p>但难以做到毫秒级保证。因为整体是一个分布式的微服务，期间的网络调用、数据 IO、触发时机间隔等耗时导致的误差是无法避免的。只有单应用级别如Java timer 这种可以实现毫秒级别</p>
-<h2 id="常见差值原因"><a href="#常见差值原因" class="headerlink" title="常见差值原因"></a>常见差值原因</h2><ol>
-<li>定时扫描：定时扫描任务队列并执行。周期如果是5分钟，那么最大延时误差就接近5分钟</li>
-<li>基于消息队列实现的定时器：任务在队列中容易造成堆积，可能导致延时增加</li>
-<li>基于分布式实现的定时器：当数据需要通过网络在不同组件中流转时，会引入网络延迟，导致延时增加</li>
-<li>任务数据的查找延时：当一个任务的触发过程中涉及多次查改操作，如果数据存储不合理导致检索效率低，整体流程耗时自然增加（如索引不合适、缓存未击中）</li>
-<li>同一时间任务量大：若在某一时间有大量定时任务需要出发，由于系统处理能力是有限的，任务处理必定有先有后，形成排队状态，会导致后处理的任务延时较高</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>几乎所有定时任务框架或消息队列，只支持秒级误差。因此针对精准度的优化是定时微服务的难点问题</p>
-<h1 id="难点-高负载"><a href="#难点-高负载" class="headerlink" title="难点- 高负载"></a>难点- 高负载</h1><p>高负载：支持大量任务同时处理不积压</p>
-<h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h2><p>真实的业务场景，如果定时微服务接入的业务越来越多，自然导致任务量的暴涨，进而导致的问题有：</p>
-<ol>
-<li>数据库压力增大：任务信息存储在数据库中，若任务量增加，数据库的读写压力也会增加，可能导致数据库性能下降</li>
-<li>内存占用增加：每个任务都需要占用一定的内存资源，若任务量增加，内存占用也会增加，可能导致内存不足</li>
-<li>处理延迟增加：若系统处理能力有限，当任务量增加时，任务处理的延迟也会增加，可能导致任务触发时间与预期有较大误差</li>
-<li>系统资源浪费：若系统资源（如CPU、网络带宽）有限，当任务量增加时，系统资源的利用效率可能会下降</li>
-</ol>
-<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>针对高负载量，可以在以下几个方面考虑解决方案：</p>
-<ol>
-<li><p>应用层减少任务量<br> 业务方整合任务列表，减少对定时微服务的调用次数。即如果业务方在同一时间有多个任务要执行，那他应该将多个任务列成一个计划列表，然后为这个计划列表创建一个定时任务，而不是为计划里的每一项创建一个定时任务</p>
-</li>
-<li><p>分库分表<br> 分库分表的基本概念是将一个大型数据库分成多个较小的数据库（分库），并将数据库的数据进一步分成多个较小的表（分表）。使得查询和更新操作可以并行在多个数据库与表之间并行执行，提高系统的拓展性和性能<br> 常见分库分表策略：</p>
-<ol>
-<li>垂直分表：将原始数据按照列拆分成多个表，每个表只包含某些列。常用于处理包含大量无关字段表</li>
-<li>水平分表：将原始数据按照行拆分成多个表，每个表只包含部分行数据。常用于处理包含大量数据的表</li>
-<li>分库分表组合：将垂直分表和水平分表结合起来使用，同时对数据库和表进行切分</li>
-</ol>
-</li>
-<li><p>数据分区<br> 数据分区的思路其实跟分库分表理念类似，同样期望将数据进行拆分后提升并发度，提升检索效率。所以数据分区理念还可以运用在缓存数据等地方，如 Redis 数据同样进行分区设计等</p>
-</li>
-<li><p>线程池<br> 由于定时微服务对数据库进行操作是一个 IO 流，所以可以基于线程池技术，采用多线程，为每个任务分配一个线程进行处理。</p>
-</li>
-</ol>
-<h1 id="难点-任务异常"><a href="#难点-任务异常" class="headerlink" title="难点 - 任务异常"></a>难点 - 任务异常</h1><h2 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h2><p>在实际业务中，对于定时服务至少有一个要求：必须要触发，尽管可能有时间误差。但实际情况可能导致任务无法正常运行，主要分为以下三种异常情况：</p>
-<ol>
-<li><p>新建、激活接口异常：创建、激活任务接口发生异常。此时可以通过接口返回值反馈给用户，并可以通过主动重试等操作进行解决</p>
-</li>
-<li><p>任务流传异常：定时任务一般存储到数据库就算创建成功，后续如何确保任务消息能够顺利准时到达受方，就是定时微服务的职责，如果出现以下异常可能导致任务无法触发：</p>
-<ol>
-<li>数据库异常：整个流转过程中会频繁发生数据库存取，期间若数据库异常，可能导致任务消息丢失</li>
-<li>中间件存取异常：若将数据库任务缓存了一份到 Redis 中，那必定期间会发生很多 Redis 存取</li>
-</ol>
-</li>
-<li><p>任务出触发阶段异常：当任务进入触发阶段，需要回调业务方告知触发结果，如果回调失败，对于业务方来说同样属于任务执行失败</p>
-</li>
-</ol>
-<h2 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h2><p>针对可能出现的问题可以考虑以下方案：</p>
-<ol>
-<li><p>重试机制：如果是偶发性异常，如数据库抖动、Redis抖动等，这类异常是可以通过重试机制解决的</p>
-</li>
-<li><p>失败兜底机制：如果遇到重试无法解决的问题，如存储服务某个节点崩溃，正在进行替换，需要一定时间。这期间的任务需要标记为失败状态等待后续中间件恢复再重试。一般通过运行兜底的“定时脚本”任务，来处理这些失败任务，通常需要进行全盘扫描，运行成本较高</p>
-</li>
-<li><p>失败报警机制：如果任务失败次数超过一定阈值，需要及时报警通知相关人员，及时处理，主要针对无法再次运行成功的任务</p>
-</li>
-</ol>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-20T12:27:33.000Z" title="2025/12/20 20:27:33">2025-12-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-21T09:02:23.326Z" title="2025/12/21 17:02:23">2025-12-21</time></span><span class="level-item"> zala13 </span><span class="level-item"><a class="link-muted" href="/categories/Project/">Project</a></span><span class="level-item">a minute read (About 211 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/0.%E4%BB%8B%E7%BB%8D/">0.介绍</a></p><div class="content"><h1 id="为什么？"><a href="#为什么？" class="headerlink" title="为什么？"></a>为什么？</h1><p>现在技术领域有较成熟的项目管理系统，如：禅道、TAPD，但其更多关注点在于需求迭代和缺陷本身，对项目资源管控以及流程引擎关注较少。因此可以考虑设计一款智能的项目管理系统，核心在于对项目资源录入、任务智能流转分配等方面，目标是建立完整的 CRM 系统，结合 LLM ，该项目将有无限可能。</p>
-<h1 id="怎么学？"><a href="#怎么学？" class="headerlink" title="怎么学？"></a>怎么学？</h1><p>重点在技术架构、组件库开发、业务梳理上，针对产品设计也应该有所了解。</p>
-<h1 id="学什么？"><a href="#学什么？" class="headerlink" title="学什么？"></a>学什么？</h1><p>因为定时场景在真实业务中较为常见，所以首先选择定时微服务进行学习。</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-18T15:00:00.000Z" title="2025/12/18 23:00:00">2025-12-18</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-21T08:56:36.340Z" title="2025/12/21 16:56:36">2025-12-21</time></span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">6 minutes read (About 960 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/12/18/leetcode/31.%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97/">下一个排列</a></p><div class="content"><h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>整数数组的一个 排列  就是将其所有成员以序列或线性顺序排列。</p>
-<ul>
-<li>例如，<code>arr = [1,2,3]</code> ，以下这些都可以视作 <code>arr</code> 的排列：<code>[1,2,3]</code>、<code>[1,3,2]</code>、<code>[3,1,2]</code>、<code>[2,3,1]</code> 。</li>
-</ul>
-<p>整数数组的 下一个排列 是指其整数的下一个字典序更大的排列。更正式地，如果数组的所有排列根据其字典顺序从小到大排列在一个容器中，那么数组的 下一个排列 就是在这个有序容器中排在它后面的那个排列。如果不存在下一个更大的排列，那么这个数组必须重排为字典序最小的排列（即，其元素按升序排列）。</p>
-<ul>
-<li>例如，<code>arr = [1,2,3]</code> 的下一个排列是 <code>[1,3,2]</code> 。</li>
-<li>类似地，<code>arr = [2,3,1]</code> 的下一个排列是 <code>[3,1,2]</code> 。</li>
-<li>而 <code>arr = [3,2,1]</code> 的下一个排列是 <code>[1,2,3]</code> ，因为 <code>[3,2,1]</code> 不存在一个字典序更大的排列。</li>
-</ul>
-<p>给你一个整数数组 <code>nums</code> ，找出 <code>nums</code> 的下一个排列。</p>
-<p>必须 原地 修改，只允许使用额外常数空间。</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>这道题目其实是 Hot100 系列题目比较有独特思想的，主要有两个重点。</p>
-<p>下一个排列的实现可以分为以下几个步骤：</p>
-<ol>
-<li>从右向左找到第一个位置 <code>i</code>，使得 <code>nums[i] &lt; nums[i+1]</code>。这个位置称为 pivot（枢纽）。注意：我们从倒数第二个开始向左找。</li>
-<li>如果找到了这样的 <code>i</code>（<code>i &gt;= 0</code>），说明存在下一个排列；否则数组为完全降序，已经是最大排列。</li>
-<li>从右向左找到第一个 <code>j</code>，使得 <code>nums[j] &gt; nums[i]</code>。因为 <code>i</code> 右侧是降序的，所以从右向左第一个大于 <code>nums[i]</code> 的元素实际上是比 <code>nums[i]</code> 大的最小元素，交换后能得到刚好比原排列大的排列。</li>
-<li>交换 <code>nums[i]</code> 与 <code>nums[j]</code>。</li>
-<li>由于 <code>i</code> 右侧原先是降序（或 <code>i &lt; 0</code> 时是整个数组），交换后仍是降序。我们要把它变为升序（最小顺序），只需反转 <code>i+1</code> 到末尾的子数组。</li>
-</ol>
-<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">nextPermutation</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="comment">// 目标：将数组就地修改为字典序的下一个排列</span></span><br><span class="line">        <span class="comment">// 下面的实现使用经典四步法，并附带详细中文注释，便于理解。</span></span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="literal">null</span> || nums.length &lt;= <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 1) 从右向左找到第一个位置 i，使得 nums[i] &lt; nums[i+1]</span></span><br><span class="line">        <span class="comment">//    这个位置称为 pivot（枢纽）。注意：我们从倒数第二个开始向左找。</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> nums.length - <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; nums[i] &gt;= nums[i + <span class="number">1</span>]) &#123;</span><br><span class="line">            <span class="comment">// 这里用 &gt;= 保证我们跳过后缀中非递增的部分（即降序部分）</span></span><br><span class="line">            i--;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果找到了这样的 i（i &gt;= 0），说明存在下一个排列；否则数组为完全降序，已经是最大排列</span></span><br><span class="line">        <span class="keyword">if</span> (i &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 2) 从右向左找到第一个 j，使得 nums[j] &gt; nums[i]</span></span><br><span class="line">            <span class="comment">//    因为 i 右侧是降序的，所以从右向左第一个大于 nums[i] 的元素</span></span><br><span class="line">            <span class="comment">//    实际上是比 nums[i] 大的最小元素，交换后能得到刚好比原排列大的排列</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> nums.length - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> (j &gt; i &amp;&amp; nums[j] &lt;= nums[i]) &#123;</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 3) 交换 nums[i] 与 nums[j]</span></span><br><span class="line">            swap(nums, i, j);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 4) 由于 i 右侧原先是降序（或 i &lt; 0 时是整个数组），交换后仍是降序</span></span><br><span class="line">        <span class="comment">//    我们要把它变为升序（最小顺序），只需反转 i+1 到末尾的子数组</span></span><br><span class="line">        reverse(nums, i + <span class="number">1</span>, nums.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 交换辅助方法</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">t</span> <span class="operator">=</span> nums[a];</span><br><span class="line">        nums[a] = nums[b];</span><br><span class="line">        nums[b] = t;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 反转区间 [l, r]</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">reverse</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> l, <span class="type">int</span> r)</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">            swap(nums, l, r);</span><br><span class="line">            l++;</span><br><span class="line">            r--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-18T15:00:00.000Z" title="2025/12/18 23:00:00">2025-12-18</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-18T15:19:12.892Z" title="2025/12/18 23:19:12">2025-12-18</time></span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">2 minutes read (About 339 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/12/18/%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%80%83%E9%9D%9E%E7%AE%97%E6%B3%95%E6%89%8B%E6%92%95/%E5%9F%BA%E7%A1%80%E6%80%9D%E7%BB%B4%E4%BB%A3%E7%A0%81/">基础思维代码</a></p><div class="content"><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>本文会持续介绍一些考察非算法的手撕代码，包括但不限于基础思维代码、数据结构代码、算法代码等。</p>
-<h1 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h1><p>死锁一直是常在学习计算机编程相关知识时需要特别注意的问题，下面是一个简单的死锁示例代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DeadLockDemo</span> &#123;</span><br><span class="line">    <span class="comment">// 定义两把锁对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Object</span> <span class="variable">LOCK_A</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Object</span> <span class="variable">LOCK_B</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 线程1：先获取LOCK_A，再尝试获取LOCK_B</span></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (LOCK_A) &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">&quot; 持有锁A，尝试获取锁B&quot;</span>);</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="comment">// 模拟业务耗时，放大死锁概率</span></span><br><span class="line">                    Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    Thread.currentThread().interrupt();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">synchronized</span> (LOCK_B) &#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">&quot; 获取锁B，执行完成&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, <span class="string">&quot;线程1&quot;</span>).start();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 线程2：先获取LOCK_B，再尝试获取LOCK_A</span></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (LOCK_B) &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">&quot; 持有锁B，尝试获取锁A&quot;</span>);</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    Thread.currentThread().interrupt();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">synchronized</span> (LOCK_A) &#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">&quot; 获取锁A，执行完成&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, <span class="string">&quot;线程2&quot;</span>).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    }
 
-<p>上述代码最后会输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">线程1 持有锁A，尝试获取锁B</span><br><span class="line">线程2 持有锁B，尝试获取锁A</span><br></pre></td></tr></table></figure>
-<p>可以看到，线程1和线程2都在等待对方释放锁，从而导致死锁。</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-17T14:00:00.000Z" title="2025/12/17 22:00:00">2025-12-17</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-21T08:56:34.548Z" title="2025/12/21 16:56:34">2025-12-21</time></span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">12 minutes read (About 1827 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/12/17/leetcode/%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E9%97%AE%E9%A2%98/%E4%BA%A4%E6%8D%A2%E8%8A%82%E7%82%B9-24%E3%80%8125/">LeetCode 链表交换节点问题（24、25题）</a></p><div class="content"><p>本文将详细讲解 LeetCode 中两道经典的链表节点交换问题：</p>
-<ul>
-<li>第 24 题：两两交换链表中的节点</li>
-<li>第 25 题：K 个一组翻转链表</li>
-</ul>
-<p>这两道题都属于链表操作的经典题目，考察了对链表指针操作的掌握程度，以及递归或迭代思想的应用。</p>
-<h1 id="24-两两交换链表中的节点"><a href="#24-两两交换链表中的节点" class="headerlink" title="24. 两两交换链表中的节点"></a>24. 两两交换链表中的节点</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。</p>
-<p>你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2,3,4]</span><br><span class="line">输出：[2,1,4,3]</span><br></pre></td></tr></table></figure>
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
 
-<p><strong>提示：</strong></p>
-<ul>
-<li>链表中节点的数目在范围 <code>[0, 100]</code> 内</li>
-<li><code>0 &lt;= Node.val &lt;= 100</code></li>
-</ul>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>这道题的最优解法是使用 <strong>迭代</strong> 方法，通过维护几个关键指针来实现两两节点的交换。</p>
-<p><strong>核心思路：</strong></p>
-<ol>
-<li>使用一个虚拟头节点（dummy node）简化边界情况处理</li>
-<li>维护一个当前指针 <code>curr</code>，用于遍历链表</li>
-<li>每次交换 <code>curr</code> 后面的两个节点</li>
-<li>更新指针位置，继续下一轮交换</li>
-</ol>
-<p><strong>算法步骤：</strong></p>
-<ol>
-<li>创建虚拟头节点 <code>dummy</code>，使其指向原链表头</li>
-<li>初始化当前指针 <code>curr</code> 指向 <code>dummy</code></li>
-<li>当 <code>curr</code> 后面有至少两个节点时：<ul>
-<li>保存要交换的两个节点 <code>node1</code> 和 <code>node2</code></li>
-<li>执行交换操作：<code>node1.next = node2.next</code>，<code>node2.next = node1</code></li>
-<li>更新 <code>curr.next</code> 指向交换后的新头节点 <code>node2</code></li>
-<li>将 <code>curr</code> 移动到 <code>node1</code>，准备下一轮交换</li>
-</ul>
-</li>
-<li>返回虚拟头节点的下一个节点</li>
-</ol>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">swapPairs</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">dummy</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(-<span class="number">1</span>);</span><br><span class="line">        dummy.next = head;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">curr</span> <span class="operator">=</span> dummy;</span><br><span class="line">        <span class="keyword">while</span> (curr != <span class="literal">null</span> &amp;&amp; curr.next != <span class="literal">null</span> &amp;&amp; curr.next.next != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">node1</span> <span class="operator">=</span> curr.next, node2 = curr.next.next;</span><br><span class="line">            node1.next = node2.next;</span><br><span class="line">            node2.next = node1;</span><br><span class="line">            curr.next = node2;</span><br><span class="line">            curr = node1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
 
-<h2 id="代码讲解"><a href="#代码讲解" class="headerlink" title="代码讲解"></a>代码讲解</h2><ol>
-<li><strong>边界处理</strong>：如果链表为空，直接返回 <code>null</code></li>
-<li><strong>创建虚拟头节点</strong>：<code>dummy</code> 节点的 <code>next</code> 指向原链表头，用于简化边界情况</li>
-<li><strong>初始化当前指针</strong>：<code>curr</code> 指向 <code>dummy</code>，作为当前交换位置的前一个节点</li>
-<li><strong>循环条件</strong>：当 <code>curr</code> 后面有至少两个节点时，继续交换</li>
-<li><strong>保存节点</strong>：<code>node1</code> 是当前要交换的第一个节点，<code>node2</code> 是第二个节点</li>
-<li><strong>交换操作</strong>：<ul>
-<li><code>node1.next = node2.next</code>：将 <code>node1</code> 指向 <code>node2</code> 原来的下一个节点</li>
-<li><code>node2.next = node1</code>：将 <code>node2</code> 指向 <code>node1</code>，完成两个节点的交换</li>
-</ul>
-</li>
-<li><strong>更新指针</strong>：<ul>
-<li><code>curr.next = node2</code>：将当前指针的下一个节点指向交换后的新头节点 <code>node2</code></li>
-<li><code>curr = node1</code>：将当前指针移动到 <code>node1</code>，准备下一轮交换</li>
-</ul>
-</li>
-<li><strong>返回结果</strong>：返回虚拟头节点的下一个节点，即交换后的链表头</li>
-</ol>
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li><strong>时间复杂度</strong>：O(n)，其中 n 是链表的长度。需要遍历链表一次</li>
-<li><strong>空间复杂度</strong>：O(1)，只使用了常数级别的额外空间</li>
-</ul>
-<h1 id="25-K-个一组翻转链表"><a href="#25-K-个一组翻转链表" class="headerlink" title="25. K 个一组翻转链表"></a>25. K 个一组翻转链表</h1><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>给你链表的头节点 <code>head</code>，每 <code>k</code> 个节点一组进行翻转，请你返回修改后的链表。</p>
-<p><code>k</code> 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 <code>k</code> 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
-<p>你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2,3,4,5], k = 2</span><br><span class="line">输出：[2,1,4,3,5]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li>链表中的节点数目在范围 <code>[0, 5000]</code> 内</li>
-<li><code>0 &lt;= Node.val &lt;= 1000</code></li>
-<li><code>1 &lt;= k &lt;= 5000</code></li>
-</ul>
-<h2 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h2><p>这道题是第 24 题的升级版，需要以 <code>k</code> 个节点为一组进行翻转。同样可以使用 <strong>迭代</strong> 方法来解决。</p>
-<p><strong>核心思路：</strong></p>
-<ol>
-<li>使用虚拟头节点简化边界情况</li>
-<li>维护三个指针：<code>prev</code>（当前组的前一个节点）、<code>curr</code>（当前节点）、<code>succ</code>（当前组的后一个节点）</li>
-<li>先检查剩余节点是否足够 <code>k</code> 个</li>
-<li>如果足够，对当前组的 <code>k</code> 个节点进行翻转</li>
-<li>更新指针位置，继续下一组翻转</li>
-</ol>
-<p><strong>算法步骤：</strong></p>
-<ol>
-<li>创建虚拟头节点 <code>dummy</code>，使其指向原链表头</li>
-<li>初始化 <code>prev</code> 指向 <code>dummy</code>，<code>curr</code> 指向原链表头</li>
-<li>循环处理链表：<ul>
-<li>检查剩余节点是否足够 <code>k</code> 个</li>
-<li>如果不足，跳出循环</li>
-<li>如果足够，找到当前组的尾节点和下一组的头节点</li>
-<li>翻转当前组的 <code>k</code> 个节点</li>
-<li>更新指针位置，连接翻转后的链表</li>
-</ul>
-</li>
-<li>返回虚拟头节点的下一个节点</li>
-</ol>
-<h2 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">reverseKGroup</span><span class="params">(ListNode head, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">dummy</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(-<span class="number">1</span>);</span><br><span class="line">        dummy.next = head;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">prev</span> <span class="operator">=</span> dummy, curr = head;</span><br><span class="line">        <span class="keyword">while</span> (curr!= <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">succ</span> <span class="operator">=</span> prev;</span><br><span class="line">            <span class="type">int</span> <span class="variable">cnt</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (cnt &lt; k) &#123;</span><br><span class="line">                <span class="keyword">if</span> (succ.next == <span class="literal">null</span>) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                succ = succ.next;</span><br><span class="line">                cnt++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (cnt != k) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            succ = succ.next;</span><br><span class="line"></span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">start</span> <span class="operator">=</span> prev;</span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">end</span> <span class="operator">=</span> prev.next;</span><br><span class="line">            prev = prev.next;</span><br><span class="line">            curr = curr.next;</span><br><span class="line">            <span class="keyword">while</span> (curr != succ) &#123;</span><br><span class="line">                <span class="type">ListNode</span> <span class="variable">next</span> <span class="operator">=</span> curr.next;</span><br><span class="line">                curr.next = prev;</span><br><span class="line">                prev = curr;</span><br><span class="line">                curr = next;</span><br><span class="line">            &#125;</span><br><span class="line">            start.next = prev;</span><br><span class="line">            end.next = succ;</span><br><span class="line">            prev = end;</span><br><span class="line">            curr = prev.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="代码讲解-1"><a href="#代码讲解-1" class="headerlink" title="代码讲解"></a>代码讲解</h2><ol>
-<li><strong>边界处理</strong>：如果链表为空，直接返回 <code>null</code></li>
-<li><strong>创建虚拟头节点</strong>：<code>dummy</code> 节点的 <code>next</code> 指向原链表头</li>
-<li><strong>初始化指针</strong>：<code>prev</code> 指向 <code>dummy</code>，<code>curr</code> 指向原链表头</li>
-<li><strong>检查剩余节点</strong>：<ul>
-<li>使用 <code>succ</code> 指针从 <code>prev</code> 开始移动 <code>k</code> 步</li>
-<li>如果移动过程中遇到 <code>null</code>，说明剩余节点不足 <code>k</code> 个，跳出循环</li>
-</ul>
-</li>
-<li><strong>记录位置</strong>：<ul>
-<li><code>succ</code> 指向当前组的下一个节点</li>
-<li><code>start</code> 是当前组的前一个节点</li>
-<li><code>end</code> 是当前组翻转前的头节点（翻转后的尾节点）</li>
-</ul>
-</li>
-<li><strong>翻转当前组</strong>：<ul>
-<li>使用 <code>prev</code> 和 <code>curr</code> 指针进行翻转</li>
-<li>每次将 <code>curr</code> 的下一个节点指向 <code>prev</code>，然后更新 <code>prev</code> 和 <code>curr</code></li>
-</ul>
-</li>
-<li><strong>连接链表</strong>：<ul>
-<li><code>start.next = prev</code>：将当前组的前一个节点指向翻转后的头节点</li>
-<li><code>end.next = succ</code>：将翻转后的尾节点指向原当前组的下一个节点</li>
-</ul>
-</li>
-<li><strong>更新指针</strong>：<ul>
-<li><code>prev = end</code>：将 <code>prev</code> 指向翻转后的尾节点</li>
-<li><code>curr = prev.next</code>：将 <code>curr</code> 指向下一组的头节点</li>
-</ul>
-</li>
-<li><strong>返回结果</strong>：返回虚拟头节点的下一个节点</li>
-</ol>
-<h2 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li><strong>时间复杂度</strong>：O(n)，其中 n 是链表的长度。每个节点最多被访问两次</li>
-<li><strong>空间复杂度</strong>：O(1)，只使用了常数级别的额外空间</li>
-</ul>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这两道题都是链表操作的经典题目，考察了对链表指针的熟练掌握程度。它们的共同特点是：</p>
-<ol>
-<li>使用 <strong>虚拟头节点</strong> 简化边界情况处理</li>
-<li>维护多个指针来跟踪当前操作的位置</li>
-<li>进行节点的实际交换，而不是仅仅改变节点的值</li>
-<li>保持指针的正确指向，避免链表断裂</li>
-</ol>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-14T14:00:00.000Z" title="2025/12/14 22:00:00">2025-12-14</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-21T08:56:35.384Z" title="2025/12/21 16:56:35">2025-12-21</time></span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">11 minutes read (About 1591 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/12/14/leetcode/%E6%8E%A5%E9%9B%A8%E6%B0%B4%E9%97%AE%E9%A2%98/%E6%8E%A5%E9%9B%A8%E6%B0%B4%E9%97%AE%E9%A2%98-11%E3%80%8142/">接雨水问题-11、42</a></p><div class="content"><h1 id="参考题目"><a href="#参考题目" class="headerlink" title="参考题目"></a>参考题目</h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/trapping-rain-water/">42. 接雨水</a></p>
-<p><strong>42. 接雨水 | 力扣 | LeetCode | 🔴</strong></p>
-<p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。</p>
-<h3 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h3><p><img src="/image.png" alt="接雨水示例1"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：height = [0,1,0,2,1,0,1,3,2,1,2,1]</span><br><span class="line">输出：6</span><br></pre></td></tr></table></figure>
-
-<p>解释：上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。</p>
-<h3 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：height = [4,2,0,3,2,5]</span><br><span class="line">输出：9</span><br></pre></td></tr></table></figure>
-
-<h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><ul>
-<li>n &#x3D;&#x3D; height.length</li>
-<li>1 &lt;&#x3D; n &lt;&#x3D; 2 * 10⁴</li>
-<li>0 &lt;&#x3D; height[i] &lt;&#x3D; 10⁵</li>
-</ul>
-<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>暴力解法 → 备忘录解法 → 双指针解法</p>
-<h3 id="暴力解法-核心思路"><a href="#暴力解法-核心思路" class="headerlink" title="暴力解法-核心思路"></a>暴力解法-核心思路</h3><p>仅仅考虑位置 i 这一个位置能装下多少水？</p>
-<p><img src="/image-1.png" alt="alt text"></p>
-<p>能装 2 格水，为什么位置 i 最多能盛 2 格水呢？因为，位置 i 能达到的水柱高度和其左边的最高柱子、右边的最高柱子有关，我们分别称这两个柱子高度为 l_max 和 r_max；位置 i 最大的水柱高度就是 min(l_max, r_max)。</p>
-<p>也就是对于位置 i，能够装的水为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">water[i] = min(</span><br><span class="line">    # 左边最高的柱子</span><br><span class="line">    max(height[0..i]),  </span><br><span class="line">    # 右边最高的柱子</span><br><span class="line">    max(height[i..end]) </span><br><span class="line">) - height[i]</span><br></pre></td></tr></table></figure>
-
-<p>基于此，暴力写法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">trap</span><span class="params">(<span class="type">int</span>[] height)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> height.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">l_max</span> <span class="operator">=</span> <span class="number">0</span>, r_max = <span class="number">0</span>;</span><br><span class="line">            <span class="comment">// 找右边最高的柱子</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; j &lt; n; j++)</span><br><span class="line">                r_max = Math.max(r_max, height[j]);</span><br><span class="line">            <span class="comment">// 找左边最高的柱子</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; j &gt;= <span class="number">0</span>; j--)</span><br><span class="line">                l_max = Math.max(l_max, height[j]);</span><br><span class="line">            <span class="comment">// 如果自己就是最高的话，</span></span><br><span class="line">            <span class="comment">// l_max == r_max == height[i]</span></span><br><span class="line">            res += Math.min(l_max, r_max) - height[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>时间复杂度 O(N²)，空间复杂度 O(1)。但是很明显这种计算 r_max 和 l_max 的方式非常笨拙</p>
-<h3 id="备忘录优化"><a href="#备忘录优化" class="headerlink" title="备忘录优化"></a>备忘录优化</h3><p>开两个数组 r_max 和 l_max 充当备忘录，l_max[i] 表示位置 i 左边最高的柱子高度，r_max[i] 表示位置 i 右边最高的柱子高度。预先把这两个数组计算好，避免重复计算：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">trap</span><span class="params">(<span class="type">int</span>[] height)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (height.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> height.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 数组充当备忘录</span></span><br><span class="line">        <span class="type">int</span>[] l_max = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">        <span class="type">int</span>[] r_max = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">        <span class="comment">// 初始化 base case</span></span><br><span class="line">        l_max[<span class="number">0</span>] = height[<span class="number">0</span>];</span><br><span class="line">        r_max[n - <span class="number">1</span>] = height[n - <span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 从左向右计算 l_max</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">            l_max[i] = Math.max(height[i], l_max[i - <span class="number">1</span>]);</span><br><span class="line">        <span class="comment">// 从右向左计算 r_max</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> n - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">            r_max[i] = Math.max(height[i], r_max[i + <span class="number">1</span>]);</span><br><span class="line">        <span class="comment">// 计算答案</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n - <span class="number">1</span>; i++)</span><br><span class="line">            res += Math.min(l_max[i], r_max[i]) - height[i];</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>把时间复杂度降低为 O(N)，已经是最优了，但是空间复杂度是 O(N)</p>
-<h3 id="双指针解法"><a href="#双指针解法" class="headerlink" title="双指针解法"></a>双指针解法</h3><p>用双指针边走边算，节省下空间复杂度。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">trap</span><span class="params">(<span class="type">int</span>[] height)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>, right = height.length - <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">l_max</span> <span class="operator">=</span> <span class="number">0</span>, r_max = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            l_max = Math.max(l_max, height[left]);</span><br><span class="line">            r_max = Math.max(r_max, height[right]);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// res += min(l_max, r_max) - height[i]</span></span><br><span class="line">            <span class="keyword">if</span> (l_max &lt; r_max) &#123;</span><br><span class="line">                res += l_max - height[left];</span><br><span class="line">                left++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                res += r_max - height[right];</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>对于下图的情况，我们已经知道 l_max &lt; r_max 了，至于这个 r_max 是不是右边最大的，不重要。重要的是 height[i] 能够装的水只和较低的 l_max 之差有关，所以此处自然计算的是 left 柱所能接收雨水：</p>
-<p><img src="/image-2.png" alt="alt text"></p>
-<h1 id="拓展题目"><a href="#拓展题目" class="headerlink" title="拓展题目"></a>拓展题目</h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/container-with-most-water/">11. 盛最多水的容器</a></p>
-<p><strong>11. 盛最多水的容器 | 力扣 | LeetCode | 🟠</strong></p>
-<p>给定一个长度为 n 的整数数组 height 。有 n 条垂线，第 i 条线的两个端点是 (i, 0) 和 (i, height[i]) 。</p>
-<p>找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。</p>
-<p>返回容器可以储存的最大水量。</p>
-<p>说明：你不能倾斜容器。</p>
-<h3 id="示例-1：-1"><a href="#示例-1：-1" class="headerlink" title="示例 1："></a>示例 1：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：[1,8,6,2,5,4,8,3,7]</span><br><span class="line">输出：49</span><br></pre></td></tr></table></figure>
-
-<p>解释：图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。</p>
-<h3 id="示例-2：-1"><a href="#示例-2：-1" class="headerlink" title="示例 2："></a>示例 2：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：height = [1,1]</span><br><span class="line">输出：1</span><br></pre></td></tr></table></figure>
-
-<h3 id="提示：-1"><a href="#提示：-1" class="headerlink" title="提示："></a>提示：</h3><ul>
-<li>n &#x3D;&#x3D; height.length</li>
-<li>2 &lt;&#x3D; n &lt;&#x3D; 10⁵</li>
-<li>0 &lt;&#x3D; height[i] &lt;&#x3D; 10⁴</li>
-</ul>
-<p>题目来源：力扣 11. 盛最多水的容器。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>和接雨水问题很类似，可以完全套用前文的思路，而且还更简单。两道题的区别在于：</p>
-<p>接雨水问题给出的类似一幅直方图，每个横坐标都有宽度，而本题给出的每个横坐标是一条竖线，没有宽度。</p>
-<p>前文讨论了半天 l_max 和 r_max，实际上都是为了计算 height[i] 能够装多少水；而本题中 height[i] 没有了宽度，那自然就好办多了。</p>
-<p>举个例子，如果在接雨水问题中，你知道了 height[left] 和 height[right] 的高度，你能算出 left 和 right 之间能够盛下多少水吗？</p>
-<p>不能，因为你不知道 left 和 right 之间每个柱子具体能盛多少水，你得通过每个柱子的 l_max 和 r_max 来计算才行。</p>
-<p>反过来，就本题而言，你知道了 height[left] 和 height[right] 的高度，能算出 left 和 right 之间能够盛下多少水吗？</p>
-<p>可以，因为本题中竖线没有宽度，所以 left 和 right 之间能够盛的水就是：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">min(height[left], height[right]) * (right - left)</span><br></pre></td></tr></table></figure>
-
-<p>解决这道题的思路依然是双指针技巧：</p>
-<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><p>用 left 和 right 两个指针从两端向中心收缩，一边收缩一边计算 [left, right] 之间的矩形面积，取最大的面积值即是答案。</p>
-<p>注意，收缩的操作本就是为了寻找更大的面积，所以应该把 left 和 right 更小的一边先进行收缩，期望能够找到更高的边代替，进而能够更新最大面积</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxArea</span><span class="params">(<span class="type">int</span>[] height)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>, right = height.length - <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="comment">// [left, right] 之间的矩形面积</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">cur_area</span> <span class="operator">=</span> Math.min(height[left], height[right]) * (right - left);</span><br><span class="line">            res = Math.max(res, cur_area);</span><br><span class="line">            <span class="comment">// 双指针技巧，移动较低的一边</span></span><br><span class="line">            <span class="keyword">if</span> (height[left] &lt; height[right]) &#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2025-12-13T13:00:00.000Z" title="2025/12/13 21:00:00">2025-12-13</time></span><span class="level-item">Updated&nbsp;<time dateTime="2025-12-21T08:55:48.274Z" title="2025/12/21 16:55:48">2025-12-21</time></span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">6 minutes read (About 895 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/12/13/leetcode/%E5%93%88%E5%B8%8C%E5%8E%BB%E9%87%8D%E9%97%AE%E9%A2%98/3.%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/">LeetCode 3. 无重复字符的最长子串</a></p><div class="content"><h1 id="无重复字符的最长子串"><a href="#无重复字符的最长子串" class="headerlink" title="无重复字符的最长子串"></a>无重复字符的最长子串</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</p>
-<p><strong>示例 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;abcabcbb&quot;</span><br><span class="line">输出: 3 </span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;abc&quot;，所以其长度为 3。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;bbbbb&quot;</span><br><span class="line">输出: 1</span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;b&quot;，所以其长度为 1。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;pwwkew&quot;</span><br><span class="line">输出: 3</span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;wke&quot;，所以其长度为 3。</span><br><span class="line">     请注意，你的答案必须是 子串 的长度，&quot;pwke&quot; 是一个子序列，不是子串。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>0 &lt;= s.length &lt;= 5 * 10^4</code></li>
-<li><code>s</code> 由英文字母、数字、符号和空格组成</li>
-</ul>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>这道题的最优解法是使用 <strong>滑动窗口</strong> 算法，通过维护一个滑动窗口 window （通常为 Map 类型）来记录当前不包含重复字符的子串，并且较为简单，不需要保存 need 。</p>
-<h3 id="核心思路"><a href="#核心思路" class="headerlink" title="核心思路"></a>核心思路</h3><ol>
-<li>使用两个指针 <code>left</code> 和 <code>right</code> 分别表示滑动窗口的左右边界</li>
-<li>使用哈希表（HashMap）记录窗口内的字符及其出现次数</li>
-<li>右指针 <code>right</code> 不断向右移动，将当前字符加入窗口</li>
-<li>如果当前字符在窗口中已经存在（出现次数大于1），则左指针 <code>left</code> 向右移动，直到窗口中不再包含重复字符</li>
-<li>每次移动右指针时，更新最长子串的长度</li>
-</ol>
-<h3 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h3><ol>
-<li>初始化 <code>left = 0</code>，<code>right = 0</code>，<code>maxLength = 0</code></li>
-<li>创建一个哈希表 <code>window</code> 来存储字符及其出现次数</li>
-<li>右指针 <code>right</code> 遍历字符串：<ul>
-<li>将当前字符 <code>s[right]</code> 加入窗口，更新其出现次数</li>
-<li>如果当前字符出现次数大于1，则左指针 <code>left</code> 向右移动，同时减少对应字符的出现次数，直到当前字符出现次数等于1</li>
-<li>更新最长子串长度：<code>maxLength = max(maxLength, right - left + 1)</code></li>
-</ul>
-</li>
-<li>返回 <code>maxLength</code></li>
-</ol>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><h3 id="Java-实现"><a href="#Java-实现" class="headerlink" title="Java 实现"></a>Java 实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">lengthOfLongestSubstring</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (s.length() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        HashMap&lt;Character, Integer&gt; window = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="type">int</span> <span class="variable">maxLength</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> ( ; right &lt; s.length(); right++) &#123;</span><br><span class="line">            <span class="type">char</span> <span class="variable">curChar</span> <span class="operator">=</span> s.charAt(right);</span><br><span class="line">            window.put(curChar, window.getOrDefault(curChar, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span> (window.get(curChar) &gt; <span class="number">1</span> &amp;&amp; left &lt;= right) &#123;</span><br><span class="line">                <span class="type">char</span> <span class="variable">deleteChar</span> <span class="operator">=</span> s.charAt(left);</span><br><span class="line">                window.put(deleteChar, window.get(deleteChar) - <span class="number">1</span>);</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">            maxLength = Math.max(right - left + <span class="number">1</span>, maxLength);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxLength;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="C-实现"><a href="#C-实现" class="headerlink" title="C++ 实现"></a>C++ 实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(std::string s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s.<span class="built_in">size</span>() == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">        std::unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; win;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (right &lt; s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="type">char</span> ch = s[right];</span><br><span class="line">            win[ch]++;</span><br><span class="line">            <span class="keyword">while</span> (win[ch] &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                win[s[left]]--;</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">            res = std::<span class="built_in">max</span>(res, right - left + <span class="number">1</span>);</span><br><span class="line">            right++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li><strong>时间复杂度：</strong> O(n)，其中 n 是字符串的长度。左指针和右指针分别最多移动 n 次。</li>
-<li><strong>空间复杂度：</strong> O(min(m, n))，其中 m 是字符集的大小。哈希表最多需要存储 m 个不同的字符。</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这道题是滑动窗口算法的经典应用。通过维护一个动态调整的窗口，我们可以在一次遍历中找到最长无重复字符子串，时间复杂度为 O(n)。</p>
-<p><strong>同时还可以看到，C++ 和 Java 语言在 Map 接口上使用的不同，Java 更喜欢用 <code>Map.xxx(key, val)</code> 方法来获取默认值，而 C++ 则更倾向于使用 <code>Map[index]</code> 运算符。</strong></p>
-<p>滑动窗口算法是解决字符串相关问题的常用技巧，特别是在处理子串、子数组等连续问题时非常有效。</p>
-</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/landshark_dynamic.gif" alt="ZALA"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">ZALA</p><p class="is-size-6 is-block">哈尔滨工业大学（深圳）</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>广东深圳, 全国可飞</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">10</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">10</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zala13" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zala13"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/495714099"><i class="fab fa-bilibili"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://leetcode.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">力扣</span></span><span class="level-right"><span class="level-item tag">leetcode.cn</span></span></a></li><li><a class="level is-mobile" href="https://labuladong.online/algo/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">labuladong 的算法笔记</span></span><span class="level-right"><span class="level-item tag">labuladong.online</span></span></a></li><li><a class="level is-mobile" href="https://javabetter.cn/home.html" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Java进阶之路</span></span><span class="level-right"><span class="level-item tag">javabetter.cn</span></span></a></li><li><a class="level is-mobile" href="https://xiaolincoding.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">小林 Coding</span></span><span class="level-right"><span class="level-item tag">xiaolincoding.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Introduction/"><span class="tag">Introduction</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%B8%AD%E7%AD%89/"><span class="tag">中等</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"><span class="tag">双指针</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%97%E5%85%B8%E5%BA%8F/"><span class="tag">字典序</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"><span class="tag">微服务</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E7%BB%84/"><span class="tag">数组</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%BB%E9%94%81/"><span class="tag">死锁</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"><span class="tag">滑动窗口</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%93%BE%E8%A1%A8/"><span class="tag">链表</span><span class="tag">1</span></a></div></div></div></div></div></div><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3 is-sticky"><!--!--></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/zala13.svg" alt="Hexo" height="28"></a><p class="is-size-7"><span>&copy; 2026 ZALA</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'folded'
-                }
-            }
-        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
-      window.cookieconsent.initialise({
-        type: "info",
-        theme: "edgeless",
-        static: false,
-        position: "bottom-left",
-        content: {
-          message: "This website uses cookies to improve your experience.",
-          dismiss: "Got it!",
-          allow: "Allow cookies",
-          deny: "Decline",
-          link: "Learn more",
-          policy: "Cookie Policy",
-          href: "https://www.cookiesandyou.com/",
-        },
-        palette: {
-          popup: {
-            background: "#edeff5",
-            text: "#838391"
-          },
-          button: {
-            background: "#4b81e8"
-          },
-        },
-      });
-    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
-                $('.justified-gallery').justifiedGallery();
-            }
-        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
-        });</script></body></html>
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a></span><div id="menus"></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/12/12/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D%20Introduction/" title="Introduction"><i class="fas fa-thumbtack sticky"></i>Introduction</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-12-12T12:14:04.000Z" title="Created 2025-12-12 20:14:04">2025-12-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Personal/">Personal</a></span></div><div class="content">个人信息我是 ZALA，目前就读于哈尔滨工业大学（深圳），坐标广东深圳。 虽然阴差阳错选择了电气工程及其自动化专业，但对 Code 持有着真诚且炽热的心！ 技术栈核心技术 Java：熟练掌握Java核心技术，包括集合框架、多线程、IO 流等，了解设计模式和 JVM 基础知识 C++：扎实的面向对象编程基础，熟悉STL容器和算法，了解内存管理和多线程编程  后端开发 熟悉常见的后端开发框架、数据库设计与优化、常用中间件，熟练掌握 Git、Maven、IDEA等主流开发工具 完成社区项目，正在学习微服务架构  AI应用开发 熟悉 AI 应用开发的核心技术要点，如 RAG 知识库构建与检索、Agent 架构设计、提示词工程、MCP等 完成 RAG 知识库开发、Agent 边缘设备本地部署  联系我 GitHub：zala13 Email：zalainsz@outlook.com  </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/01/05/leetcode/%E6%95%B0%E7%BB%84/01%E6%95%B0%E7%BB%84%E9%A2%98%E8%A7%A3/" title="Untitled">Untitled</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-01-04T16:04:25.044Z" title="Created 2026-01-05 00:04:25">2026-01-05</time></span></div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/12/21/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/2.%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" title="2.架构设计">2.架构设计</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-12-21T13:41:12.000Z" title="Created 2025-12-21 21:41:12">2025-12-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Project/">Project</a></span></div><div class="content">实现思路首先针对架构设计，介绍比较常用的几个思路 主动轮询这是实现定时器最简单粗暴的方式：轮询 + 触发，主要流程有：  注册定时器：按显式的任务执行时间，制定一系列定时任务  节点自轮询：每间隔一个微小的时间范围，对定时任务列表进行全量查询  过滤&amp;触发：以执行时间小于等于当前时刻作为过滤条件，摘出满足执行条件的定时任务进行执行   但这样的定时器需要承担 O(N) 的查询时间复杂度 存储结构优化有序表基于有序表提升查询效率 即利用存储结构，将时间复杂度均摊到每一笔操作中。例如使用红黑树或跳表，通过牺牲插入时间复杂度，降低查询时间复杂度 此处选用 Redis ZSet，以定时任务执行时间为 Score 进行有序结构的搭建，实现流程如下：  以 Redis ZSet 作为存储介质（即所有元素始终按照 Score 排序好） 每次添加定时任务时，执行 ZAdd 动作，以执行时间的时间戳作为排序的键（Score）进行有序结构的搭建 每次查询定时任务时，执行 ZRangeByScore 动作，以当前时刻的时间戳加上一个微小偏移量（1s）作为 Score 的左右边界（因为要选择的是...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%87%86%E5%A4%87/" title="1.准备">1.准备</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-12-20T13:41:12.000Z" title="Created 2025-12-20 21:41:12">2025-12-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Project/">Project</a></span></div><div class="content">价值在学习该项目前，应该对其价值有一个清晰的认识，明确学习该项目能够带来哪些提升。 优点 立意：在社区项目中经常会用到定时任务，比如定时进行数据同步、定时处理合并消息请求等，定时微服务可以很好地解决这些问题。因此除了直接调用类似 XXL-JOB 等定时模块，手动实现一个更加轻量化、可扩展的定时任务处理机制就更具有实际意义，有助于深入理解微服务架构设计。  属性：定时场景是一个通用且业务关联性弱的场景，适合做成微服务独立部署，或作为中台服务去维护。  核心：定时服务并不复杂，场景便于理解，但是重点在于定时的精度、任务的吞吐量等问题，能够锻炼对分布式系统的理解。  技术栈：在针对核心问题上，核心组件就是 MySQL、Redis、消息队列（作为异步回调能力）等，技术栈相对简单，便于快速上手。   价值重点在于架构能力的提高，定时微服务决定采用模块化设计、分治策略等设计理念，能够有效在核心问题上提供较好的解决方案。 背景与现状了解项目价值后，需要继续对项目在实际业务中出现的场景进行分析，明确项目的背景与现状。 场景 某类办公软件，每天早上9点通知员工打卡 订单下单15分钟后，若未支付则自...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/0.%E4%BB%8B%E7%BB%8D/" title="0.介绍">0.介绍</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-12-20T12:27:33.000Z" title="Created 2025-12-20 20:27:33">2025-12-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Project/">Project</a></span></div><div class="content">为什么？现在技术领域有较成熟的项目管理系统，如：禅道、TAPD，但其更多关注点在于需求迭代和缺陷本身，对项目资源管控以及流程引擎关注较少。因此可以考虑设计一款智能的项目管理系统，核心在于对项目资源录入、任务智能流转分配等方面，目标是建立完整的 CRM 系统，结合 LLM ，该项目将有无限可能。 怎么学？重点在技术架构、组件库开发、业务梳理上，针对产品设计也应该有所了解。 学什么？因为定时场景在真实业务中较为常见，所以首先选择定时微服务进行学习。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/12/18/leetcode/31.%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97/" title="下一个排列">下一个排列</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-12-18T15:00:00.000Z" title="Created 2025-12-18 23:00:00">2025-12-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">题目整数数组的一个 排列  就是将其所有成员以序列或线性顺序排列。  例如，arr = [1,2,3] ，以下这些都可以视作 arr 的排列：[1,2,3]、[1,3,2]、[3,1,2]、[2,3,1] 。  整数数组的 下一个排列 是指其整数的下一个字典序更大的排列。更正式地，如果数组的所有排列根据其字典顺序从小到大排列在一个容器中，那么数组的 下一个排列 就是在这个有序容器中排在它后面的那个排列。如果不存在下一个更大的排列，那么这个数组必须重排为字典序最小的排列（即，其元素按升序排列）。  例如，arr = [1,2,3] 的下一个排列是 [1,3,2] 。 类似地，arr = [2,3,1] 的下一个排列是 [3,1,2] 。 而 arr = [3,2,1] 的下一个排列是 [1,2,3] ，因为 [3,2,1] 不存在一个字典序更大的排列。  给你一个整数数组 nums ，找出 nums 的下一个排列。 必须 原地 修改，只允许使用额外常数空间。 思路这道题目其实是 Hot100 系列题目比较有独特思想的，主要有两个重点。 下一个排列的实现可以分为以下几个步骤：  从右...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/12/18/%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%80%83%E9%9D%9E%E7%AE%97%E6%B3%95%E6%89%8B%E6%92%95/%E5%9F%BA%E7%A1%80%E6%80%9D%E7%BB%B4%E4%BB%A3%E7%A0%81/" title="基础思维代码">基础思维代码</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-12-18T15:00:00.000Z" title="Created 2025-12-18 23:00:00">2025-12-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">介绍本文会持续介绍一些考察非算法的手撕代码，包括但不限于基础思维代码、数据结构代码、算法代码等。 死锁死锁一直是常在学习计算机编程相关知识时需要特别注意的问题，下面是一个简单的死锁示例代码： 1234567891011121314151617181920212223242526272829303132333435363738public class DeadLockDemo &#123;    // 定义两把锁对象    private static final Object LOCK_A = new Object();    private static final Object LOCK_B = new Object();    public static void main(String[] args) &#123;        // 线程1：先获取LOCK_A，再尝试获取LOCK_B        new Thread(() -&gt; &#123;            synchronized (LOCK_A) &#123;                Syste...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/12/17/leetcode/%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E9%97%AE%E9%A2%98/%E4%BA%A4%E6%8D%A2%E8%8A%82%E7%82%B9-24%E3%80%8125/" title="LeetCode 链表交换节点问题（24、25题）">LeetCode 链表交换节点问题（24、25题）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-12-17T14:00:00.000Z" title="Created 2025-12-17 22:00:00">2025-12-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">本文将详细讲解 LeetCode 中两道经典的链表节点交换问题：  第 24 题：两两交换链表中的节点 第 25 题：K 个一组翻转链表  这两道题都属于链表操作的经典题目，考察了对链表指针操作的掌握程度，以及递归或迭代思想的应用。 24. 两两交换链表中的节点题目描述给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。 你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。 示例： 12输入：head = [1,2,3,4]输出：[2,1,4,3]  提示：  链表中节点的数目在范围 [0, 100] 内 0 &lt;= Node.val &lt;= 100  解题思路这道题的最优解法是使用 迭代 方法，通过维护几个关键指针来实现两两节点的交换。 核心思路：  使用一个虚拟头节点（dummy node）简化边界情况处理 维护一个当前指针 curr，用于遍历链表 每次交换 curr 后面的两个节点 更新指针位置，继续下一轮交换  算法步骤：  创建虚拟头节点 dummy，使其指向原链表头 初始化当前指针 curr 指向 dummy 当 curr 后面有至少两个节点时...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/12/14/leetcode/%E6%8E%A5%E9%9B%A8%E6%B0%B4%E9%97%AE%E9%A2%98/%E6%8E%A5%E9%9B%A8%E6%B0%B4%E9%97%AE%E9%A2%98-11%E3%80%8142/" title="接雨水问题-11、42">接雨水问题-11、42</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-12-14T14:00:00.000Z" title="Created 2025-12-14 22:00:00">2025-12-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">参考题目42. 接雨水 42. 接雨水 | 力扣 | LeetCode | 🔴 给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。 示例 1： 12输入：height = [0,1,0,2,1,0,1,3,2,1,2,1]输出：6  解释：上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 示例 2：12输入：height = [4,2,0,3,2,5]输出：9  提示： n &#x3D;&#x3D; height.length 1 &lt;&#x3D; n &lt;&#x3D; 2 * 10⁴ 0 &lt;&#x3D; height[i] &lt;&#x3D; 10⁵  解法暴力解法 → 备忘录解法 → 双指针解法 暴力解法-核心思路仅仅考虑位置 i 这一个位置能装下多少水？  能装 2 格水，为什么位置 i 最多能盛 2 格水呢？因为，位置 i 能达到的水柱高度和其左边的最高柱子、右边的最高柱子有关，我们分别称这两个柱子高度为 l_max...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/12/13/leetcode/%E5%93%88%E5%B8%8C%E5%8E%BB%E9%87%8D%E9%97%AE%E9%A2%98/3.%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" title="LeetCode 3. 无重复字符的最长子串">LeetCode 3. 无重复字符的最长子串</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-12-13T13:00:00.000Z" title="Created 2025-12-13 21:00:00">2025-12-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">无重复字符的最长子串题目描述给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。 示例 1: 123输入: s = &quot;abcabcbb&quot;输出: 3 解释: 因为无重复字符的最长子串是 &quot;abc&quot;，所以其长度为 3。  示例 2: 123输入: s = &quot;bbbbb&quot;输出: 1解释: 因为无重复字符的最长子串是 &quot;b&quot;，所以其长度为 1。  示例 3: 1234输入: s = &quot;pwwkew&quot;输出: 3解释: 因为无重复字符的最长子串是 &quot;wke&quot;，所以其长度为 3。     请注意，你的答案必须是 子串 的长度，&quot;pwke&quot; 是一个子序列，不是子串。  提示：  0 &lt;= s.length &lt;= 5 * 10^4 s 由英文字母、数字、符号和空格组成  解题思路这道题的最优解法是使用 滑动窗口 算法，通过维护一个滑动窗口 window （通常为 Map 类型）来记录当前不包含重复字符的子串，并且较为简单，不需要保...</div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">ZALA</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/05/leetcode/%E6%95%B0%E7%BB%84/01%E6%95%B0%E7%BB%84%E9%A2%98%E8%A7%A3/" title="Untitled">Untitled</a><time datetime="2026-01-04T16:04:25.044Z" title="Created 2026-01-05 00:04:25">2026-01-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/21/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/2.%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" title="2.架构设计">2.架构设计</a><time datetime="2025-12-21T13:41:12.000Z" title="Created 2025-12-21 21:41:12">2025-12-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/1.%E5%87%86%E5%A4%87/" title="1.准备">1.准备</a><time datetime="2025-12-20T13:41:12.000Z" title="Created 2025-12-20 21:41:12">2025-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/20/project/%E5%BE%AE%E6%9C%8D%E5%8A%A1/0.%E4%BB%8B%E7%BB%8D/" title="0.介绍">0.介绍</a><time datetime="2025-12-20T12:27:33.000Z" title="Created 2025-12-20 20:27:33">2025-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/18/leetcode/31.%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97/" title="下一个排列">下一个排列</a><time datetime="2025-12-18T15:00:00.000Z" title="Created 2025-12-18 23:00:00">2025-12-18</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Personal/"><span class="card-category-list-name">Personal</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Project/"><span class="card-category-list-name">Project</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">技术</span><span class="card-category-list-count">5</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E6%AD%BB%E9%94%81/" style="font-size: 1.1em; color: #999">死锁</a> <a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" style="font-size: 1.1em; color: #999">滑动窗口</a> <a href="/tags/%E4%B8%AD%E7%AD%89/" style="font-size: 1.1em; color: #999">中等</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 1.37em; color: #99a4b2">微服务</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 1.1em; color: #999">数组</a> <a href="/tags/%E5%AD%97%E5%85%B8%E5%BA%8F/" style="font-size: 1.1em; color: #999">字典序</a> <a href="/tags/Introduction/" style="font-size: 1.1em; color: #999">Introduction</a> <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" style="font-size: 1.23em; color: #999ea6">双指针</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 1.1em; color: #999">链表</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.5em; color: #99a9bf">算法</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>Archives</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/01/">
+            <span class="card-archive-list-date">
+              January 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/12/">
+            <span class="card-archive-list-date">
+              December 2025
+            </span>
+            <span class="card-archive-list-count">9</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">10</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-01-10T09:16:28.352Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By ZALA</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.3</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.3"></script><script src="/js/main.js?v=5.5.3"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
